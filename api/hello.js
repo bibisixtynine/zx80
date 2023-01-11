@@ -10,7 +10,7 @@
 // (you can't access the api with terminal command : vite dev)
 //
 // => your will need vercel cli installed: https://vercel.com/download
-
+//
 
 export const config = {
     runtime: 'edge', // this is a pre-requisite
@@ -22,7 +22,7 @@ export default (req) => {
     debugger
     return new Response(`
     ADD BRANCHE FROM PRNEW
-    🤩 Hello from ${req.url} modified with prnew !
+    🤩 Hello from ${req.url} modified with prnew then vscode !
     🔥 I'm now an Edge Function!
     🔐 I can use the secret key: ${process.env.SECRET_KEY}
 
