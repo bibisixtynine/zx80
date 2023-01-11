@@ -10,7 +10,7 @@
 // (you can't access the api with terminal command : vite dev)
 //
 // => your will need vercel cli installed: https://vercel.com/download
-
+//
 
 export const config = {
     runtime: 'edge', // this is a pre-requisite
