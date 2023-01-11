@@ -21,6 +21,7 @@ export const config = {
 export default (req) => {
     debugger
     return new Response(`
+    ADD BRANCHE FROM PRNEW
     🤩 Hello from ${req.url} modified with prnew then vscode !
     🔥 I'm now an Edge Function!
     🔐 I can use the secret key: ${process.env.SECRET_KEY}
