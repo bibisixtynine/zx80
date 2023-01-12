@@ -13,28 +13,20 @@
 <div class="items">
     <div class="title">the earth !</div>
     <Earth />
-
     <div class="title">the cat !</div>
     <Cat />
-
     <div class="title">the rocket !</div>
     <Rocket />
-
     <div class="title">the threes !</div>
     <Three />
-
     <div class="title">boy&girl</div>
     <BoysnGirl />
-
     <div class="title">waou !</div>
     <Waou />
-
     <div class="title">space !</div>
     <Space />
-
     <div class="title">the go one!</div>
     <Go />
-
     <div class="title">fu !</div>
     <Fu />
 </div>
