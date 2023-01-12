@@ -1,13 +1,13 @@
 <script>
-    import Fu from "./Fu.svelte";
-    import Go from "./Go.svelte";
-    import Space from "./Space.svelte";
-    import Waou from "./Waou.svelte";
-    import BoysnGirl from "./BoysnGirl.svelte";
-    import Three from "./Three.svelte";
-    import Rocket from "./Rocket.svelte";
-    import Cat from "./Cat.svelte";
-    import Earth from "./Earth.svelte";
+    import Fu from "../libs/Fu.svelte";
+    import Go from "../libs/Go.svelte";
+    import Space from "../libs/Space.svelte";
+    import Waou from "../libs/Waou.svelte";
+    import BoysnGirl from "../libs/BoysnGirl.svelte";
+    import Three from "../libs/Three.svelte";
+    import Rocket from "../libs/Rocket.svelte";
+    import Cat from "../libs/Cat.svelte";
+    import Earth from "../libs/Earth.svelte";
 </script>
 
 <div class="items">
