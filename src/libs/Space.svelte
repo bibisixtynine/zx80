@@ -1,39 +1,28 @@
 <script>
-  import Waou from './Waou.svelte';
-
-  import BoysnGirl from '../libs/BoysnGirl.svelte';
-
-  import Three from './Three.svelte';
-
-    import Rocket from "./Rocket.svelte";
-    import Cat from "./Cat.svelte";
-    import Earth from "./Earth.svelte";
+    export let size = '80%'
+    export let name = 'nona'
 </script>
 
-<svg class="item" viewBox="0 0 500 500">
-    <rect x="0" y="0" width="500" height="500" fill="#000" rx="50" />
-        <circle cx="90" cy="100" r="50" fill="#FFC0CB" />
-        <circle cx="250" cy="320" r="35" fill="#DCF2FA" />
-        <circle cx="450" cy="200" r="60" fill="#D8E1E8" />
-        <circle cx="150" cy="400" r="20" fill="#C9E2EF" />
-        <circle cx="400" cy="90" r="30" fill="#B8DDE9" />
-        <circle cx="340" cy="360" r="45" fill="#A2DDE6" />
-        <circle cx="190" cy="280" r="25" fill="#8BD3E3" />
-        <circle cx="50" cy="170" r="40" fill="#75CCE0" />
-        <circle cx="310" cy="100" r="15" fill="#5EC8DD" />
-        <circle cx="220" cy="460" r="55" fill="#4BC4DA" />
-    </svg>
+<div>
+    <svg style='--size:{size}' class='item' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72"><defs><path id="openmojiMoonViewingCeremony0" d="M15.006 43.04a9.816 9.816 0 0 1 6.623 2.957m-6.095-5.986a10.281 10.281 0 0 1 6.56 2.453m-5.819-5.458a10.585 10.585 0 0 1 6.445 2.138m-5.296-5.135a10.599 10.599 0 0 1 6.161 2.026m1.261-2.783a9.97 9.97 0 0 0-5.27-2.155m3.5-2.419a8.757 8.757 0 0 1 3.575 2.342"/><path id="openmojiMoonViewingCeremony1" d="M20.006 52.04a9.816 9.816 0 0 1 6.623 2.957m-6.095-5.986a10.281 10.281 0 0 1 6.56 2.453m-5.819-5.458a10.585 10.585 0 0 1 6.445 2.138m-5.296-5.135a10.599 10.599 0 0 1 6.161 2.026m1.261-2.783a9.97 9.97 0 0 0-5.27-2.155m3.5-2.419a8.757 8.757 0 0 1 3.575 2.342"/><path id="openmojiMoonViewingCeremony2" d="M25 28a12.06 12.06 0 0 0-7 5c-2.88 4.32-3.686 14.857-3.912 20.421M30 37a12.06 12.06 0 0 0-7 5c-2.292 3.438-3.27 10.81-3.687 16.484"/></defs><g stroke="#000"><circle cx="36" cy="21" r="9" fill="none" stroke-miterlimit="10" stroke-width="2"/><use href="#openmojiMoonViewingCeremony0" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><use href="#openmojiMoonViewingCeremony1" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><use href="#openmojiMoonViewingCeremony2" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path stroke-linejoin="round" stroke-width=".75" d="m52 22.46l.618.442l-.229-.724l.611-.451l-.76-.006L52 21l-.24.721l-.76.006l.611.361l-.229.814l.618-.442z"/><path stroke-linejoin="round" stroke-width="1.5" d="m54.897 32.071l1.3.929l-.482-1.523L57 30.528l-1.598-.012L54.897 29l-.505 1.426l-1.598.102l1.286.949L53.597 33l1.3-.929z"/><path stroke-linejoin="round" d="m18.5 24.337l.927.663l-.344-1.087l.917-.676l-1.14-.099l-.36-.991l-.36 1.081l-1.14.009l.917.676L17.573 25l.927-.663z"/><circle cx="53.75" cy="47.75" r="2.25" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="47" cy="47.75" r="2.25" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="40.25" cy="47.75" r="2.25" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="43.625" cy="41.75" r="2.25" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="50.375" cy="41.75" r="2.25" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="47" cy="35.75" r="2.25" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></g><circle cx="36" cy="36" r="28" fill="#1e50a0"/><circle cx="36" cy="21" r="9" fill="#f1b31c" stroke="#f1b31c" stroke-miterlimit="10" stroke-width="2"/><circle cx="53.75" cy="47.75" r="2.25" fill="#d0cfce" stroke="#d0cfce" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="47" cy="47.75" r="2.25" fill="#d0cfce" stroke="#d0cfce" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="40.25" cy="47.75" r="2.25" fill="#d0cfce" stroke="#d0cfce" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="43.625" cy="41.75" r="2.25" fill="#d0cfce" stroke="#d0cfce" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="50.375" cy="41.75" r="2.25" fill="#d0cfce" stroke="#d0cfce" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><circle cx="47" cy="35.75" r="2.25" fill="#d0cfce" stroke="#d0cfce" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><use href="#openmojiMoonViewingCeremony0" fill="none" stroke="#f4aa41" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><use href="#openmojiMoonViewingCeremony1" fill="none" stroke="#f4aa41" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><use href="#openmojiMoonViewingCeremony2" fill="none" stroke="#5c9e31" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path fill="#f1b31c" stroke="#f1b31c" stroke-linejoin="round" stroke-width=".75" d="m52 22.46l.618.442l-.229-.724l.611-.451l-.76-.006L52 21l-.24.721l-.76.006l.611.361l-.229.814l.618-.442z"/><path fill="#f1b31c" stroke="#f1b31c" stroke-linejoin="round" stroke-width="1.5" d="m54.897 32.071l1.3.929l-.482-1.523L57 30.528l-1.598-.012L54.897 29l-.505 1.426l-1.598.102l1.286.949L53.597 33l1.3-.929z"/><path fill="#f1b31c" stroke="#f1b31c" stroke-linejoin="round" d="m18.5 24.337l.927.663l-.344-1.087l.917-.676l-1.14-.099l-.36-.991l-.36 1.081l-1.14.009l.917.676L17.573 25l.927-.663z"/><path fill="#a57939" stroke="#a57939" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M36 64a27.89 27.89 0 0 0 18.617-7.092q.496-.443.971-.908H40Zm22.243-11H34v3h21.588l2.655-3z"/><g fill="none" stroke="#000" stroke-width="2"><path stroke-linecap="round" stroke-miterlimit="10" d="M55.341 49.341a2.25 2.25 0 0 1-3.182-3.182m-3.568 3.182a2.25 2.25 0 0 1-3.182-3.182m-3.568 3.182a2.25 2.25 0 0 1-3.182-3.182m6.557-2.818a2.25 2.25 0 0 1-3.182-3.182m9.932 3.182a2.25 2.25 0 0 1-3.182-3.182m-.193-2.818a2.25 2.25 0 0 1-3.182-3.182"/><path stroke-linecap="round" stroke-linejoin="round" d="M58.243 53H34v3"/><path stroke-linecap="round" stroke-miterlimit="10" d="M42.364 27.364a9 9 0 0 1-12.728-12.728"/><path stroke-linecap="round" stroke-linejoin="round" d="m40 56l-4 8"/><circle cx="36" cy="36" r="28" stroke-linejoin="round"/></g></svg>
+    <div class='name'>{name}</div>
+</div>
 
-    <style>
-        .item {
-            margin: 10px;
-            width: 80%;
-            height: auto;
-            background-color: black;
-            border: solid;
-            border-color: grey;
-            border-width: 20px;
-            border-radius: 40px;
-        }
-    </style>
-    
+<style>
+    .item {
+        width: var(--size);
+        height: auto;
+        background-color: rgb(99, 20, 225);
+        border-radius: 20%;
+        border: solid 1.5px rgb(99, 20, 225);
+    }
+    .item:hover {
+        border: solid 1.5px rgb(165, 253, 22);
+    }
+    .name {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 0.8em;
+        color:rgb(191, 187, 197);
+        text-align: center;
+    }
+</style>
