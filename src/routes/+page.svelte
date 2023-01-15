@@ -8,9 +8,12 @@
     import Rocket from "../libs/Rocket.svelte";
     import Cat from "../libs/Cat.svelte";
     import Earth from "../libs/Earth.svelte";
+    import Copycat from "../libs/Copycat.svelte";
 </script>
 
 <div class="items">
+    <div class="title">Copycat !</div>
+    <Copycat />
     <div class="title">the earth !</div>
     <Earth />
     <div class="title">the cat !</div>
@@ -46,7 +49,10 @@
         text-align: center;
         width: 90%;
         padding: 6px;
-        border-width: 6px;
+        border:solid;
+        border-width: 16px;
         border-color: rgb(189, 192, 108);
+        border-radius: 50px;
+        
     }
 </style>
