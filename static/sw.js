@@ -11,10 +11,10 @@ self.addEventListener("install", e => {
       caches.open("mysupercomputer-pwa").then(cache => {
         // Cache the homepage and stylesheets - add any assets you want to cache!
         return cache.addAll([
-          "/",
+          "/" /*,
           "/js/index.js",
           "/js/index.css",
-          "/js/toto.txt"
+          "/js/toto.txt"*/
         ]);
       })
     );
