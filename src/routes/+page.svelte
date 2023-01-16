@@ -19,22 +19,7 @@
         program_10: false,
     };
 
-    function handleClick(event) {
-        console.log(event);
-        if (document) {
-            if (state.home) {
-                let home_screen = document.getElementById("home-screen");
-                home_screen.style.display = "none";
-                state.home = false;
-                let program_1_container = document.getElementById(
-                    "program-1-container"
-                );
-                program_1_container.style.display = "block";
-                state.home = false;
-                state.program_1 = true;
-            }
-        }
-    }
+
 
     function handleBack(event) {
         let program_1_container = document.getElementById(
@@ -49,19 +34,46 @@
     }
 
     let apps = [
-        { name: "Boy", id: 1, svg:  icons.boy, backgroundColor: "rgb(39, 50, 204)"},
-        { name: "Rocket", id: 2, svg:  icons.rocket, backgroundColor: "rgb(92, 173, 205)"},
-        { name: "No", id: 3, svg:  icons.redCross, backgroundColor: "rgb(66, 66, 66)"},
-        { name: "Cat", id: 4, svg:  icons.cat, backgroundColor: "rgb(125, 184, 239)"},
-        { name: "Copycat", id: 5, svg:  icons.copycat, backgroundColor: "rgb(160, 57, 152)"},
-        { name: "Earth", id: 6, svg:  icons.earth, backgroundColor: "rgb(129, 87, 225)"},
-        { name: "Gorilla", id: 7, svg:  icons.gorilla, backgroundColor: "rgb(39, 214, 124)"},
-        { name: "Morning", id: 6, svg:  icons.morning, backgroundColor: "green"},
-        { name: "Saucer", id: 6, svg:  icons.saucer, backgroundColor: "rgb(49, 36, 78)"},
-        { name: "Space", id: 6, svg:  icons.space, backgroundColor: "rgb(99, 20, 225)"},
-        { name: "Tree", id: 6, svg:  icons.tree, backgroundColor: "rgb(80, 62, 14)"},
+        { name: "Boy", id: 0, svg:  icons.boy, backgroundColor: "rgb(39, 50, 204)"},
+        { name: "Rocket", id: 1, svg:  icons.rocket, backgroundColor: "rgb(92, 173, 205)"},
+        { name: "No", id: 2, svg:  icons.redCross, backgroundColor: "rgb(66, 66, 66)"},
+        { name: "Cat", id: 3, svg:  icons.cat, backgroundColor: "rgb(125, 184, 239)"},
+        { name: "Copycat", id: 4, svg:  icons.copycat, backgroundColor: "rgb(160, 57, 152)"},
+        { name: "Earth", id: 5, svg:  icons.earth, backgroundColor: "rgb(129, 87, 225)"},
+        { name: "Gorilla", id: 6, svg:  icons.gorilla, backgroundColor: "rgb(39, 214, 124)"},
+        { name: "Morning", id: 7, svg:  icons.morning, backgroundColor: "green"},
+        { name: "Saucer", id: 8, svg:  icons.saucer, backgroundColor: "rgb(49, 36, 78)"},
+        { name: "Space", id: 9, svg:  icons.space, backgroundColor: "rgb(99, 20, 225)"},
+        { name: "Tree", id: 10, svg:  icons.tree, backgroundColor: "rgb(80, 62, 14)"},
     ]
 
+    let current_id = 0
+
+
+    function handleClick(id) {
+        if (document) {
+            console.log('id: ' + id)
+            apps.push({ name: "Boy", id: 1, svg:  icons.boy, backgroundColor: "rgb(39, 50, 204)"})
+            apps = apps // force update home screen
+            console.log('apps length: ' + apps.length)
+            if (state.home) {
+                let home_screen = document.getElementById("home-screen");
+                home_screen.style.display = "none";
+                state.home = false;
+                let program_1_container = document.getElementById(
+                    "program-1-container"
+                );
+                program_1_container.style.display = "block";
+                state.home = false;
+                state.program_1 = true;
+                current_id = id
+                eval(`
+                    let UI = document.getElementById('ui')
+                    UI.innerHTML = '${icons.cat}'
+                `)
+            }
+        }
+    }
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -70,19 +82,27 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="program-1-container">
     <div id="program-1">
-        {@html apps[0].svg}
+        {@html apps[current_id].svg}
         <span>Hello World!</span>
+    </div>
+    <div id='ui'>
+        Oh yeah!
     </div>
 </div>
 
 <div class="home-screen" id="home-screen" display="block">
-
     {#each apps as app}
-        <Icon on:click={handleClick} {size} name={app.name} svg={app.svg} backgroundColor={app.backgroundColor}/>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <div id='toto' on:click={()=>handleClick(app.id)}>
+            <Icon {size} name={app.name} svg={app.svg} backgroundColor={app.backgroundColor}/>
+        </div>
     {/each}
 </div>
 
 <style>
+    #ui {
+        color:red;
+    }
     #program-1-container {
         display: none;
         position: absolute;
@@ -110,7 +130,7 @@
         border-radius: 20px;
 
         color: rgb(215, 215, 212);
-        background-color: rgb(39, 50, 204);
+        background-color: rgba(39, 50, 204, 0.3);
     }
 
     .home-screen {
