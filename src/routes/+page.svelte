@@ -1,14 +1,6 @@
 <script>
-    import Saucer from "../libs/Saucer.svelte";
-    import Gorilla from "../libs/Gorilla.svelte";
-    import Space from "../libs/Space.svelte";
-    import Morning from "../libs/Morning.svelte";
-    import Boy from "../libs/Boy.svelte";
-    import Tree from "../libs/Tree.svelte";
-    import Rocket from "../libs/Rocket.svelte";
-    import Cat from "../libs/Cat.svelte";
-    import Earth from "../libs/Earth.svelte";
-    import Copycat from "../libs/Copycat.svelte";
+    import Icon from "../libs/Icon.svelte";
+    import icons from "../libs/icons.js";
 
     let size = "48px";
     let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -34,8 +26,10 @@
                 let home_screen = document.getElementById("home-screen");
                 home_screen.style.display = "none";
                 state.home = false;
-                let program_1 = document.getElementsByClassName("program-1");
-                program_1[0].style.display = "block";
+                let program_1_container = document.getElementById(
+                    "program-1-container"
+                );
+                program_1_container.style.display = "block";
                 state.home = false;
                 state.program_1 = true;
             }
@@ -43,52 +37,85 @@
     }
 
     function handleBack(event) {
-        let program_1 = document.getElementsByClassName("program-1");
-        program_1[0].style.display = "none";
+        let program_1_container = document.getElementById(
+            "program-1-container"
+        );
+        program_1_container.style.display = "none";
         state.program_1 = false;
         let home_screen = document.getElementById("home-screen");
         home_screen.style.display = "flex";
         state.home = true;
         state.program_1 = false;
     }
+
+    let apps = [
+        { name: "Boy", id: 1, svg:  icons.boy, backgroundColor: "rgb(39, 50, 204)"},
+        { name: "Rocket", id: 2, svg:  icons.rocket, backgroundColor: "rgb(92, 173, 205)"},
+        { name: "No", id: 3, svg:  icons.redCross, backgroundColor: "rgb(66, 66, 66)"},
+        { name: "Cat", id: 4, svg:  icons.cat, backgroundColor: "rgb(125, 184, 239)"},
+        { name: "Copycat", id: 5, svg:  icons.copycat, backgroundColor: "rgb(160, 57, 152)"},
+        { name: "Earth", id: 6, svg:  icons.earth, backgroundColor: "rgb(129, 87, 225)"},
+        { name: "Gorilla", id: 7, svg:  icons.gorilla, backgroundColor: "rgb(39, 214, 124)"},
+        { name: "Morning", id: 6, svg:  icons.morning, backgroundColor: "green"},
+        { name: "Saucer", id: 6, svg:  icons.saucer, backgroundColor: "rgb(49, 36, 78)"},
+        { name: "Space", id: 6, svg:  icons.space, backgroundColor: "rgb(99, 20, 225)"},
+        { name: "Tree", id: 6, svg:  icons.tree, backgroundColor: "rgb(80, 62, 14)"},
+    ]
+
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div id="back-button" on:click={handleBack}>
-    home
-</div>
+<div id="back-button" on:click={handleBack}>home</div>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="program-1" on:click={handleClick}>
-    <h1>Home</h1>
-    <p>Home page</p>
+<div id="program-1-container">
+    <div id="program-1">
+        {@html apps[0].svg}
+        <span>Hello World!</span>
+    </div>
 </div>
 
 <div class="home-screen" id="home-screen" display="block">
-    {#each array as item}
-        <Rocket on:click={handleClick} {size} name="Rocket" />
-        <Copycat {size} name="Copycat" />
-        <Earth {size} name="Earth" />
-        <Cat {size} name="Cat" />
-        <Tree {size} name="Tree" />
-        <Boy {size} name="Friend" />
-        <Morning {size} name="Morning" />
-        <Space {size} name="Space" />
-        <Gorilla {size} name="Gorilla" />
-        <Saucer {size} name="Saucer" />
+
+    {#each apps as app}
+        <Icon on:click={handleClick} {size} name={app.name} svg={app.svg} backgroundColor={app.backgroundColor}/>
     {/each}
 </div>
 
 <style>
-    .program-1 {
+    #program-1-container {
         display: none;
-        background-color: red;
+        position: absolute;
+        top: 40px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    #program-1 {
         text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        font-size: 60px;
+        font-weight: 700;
+
+        border: solid 1px rgb(39, 50, 204);
+        padding: 20px;
+        border-radius: 20px;
+
+        color: rgb(215, 215, 212);
+        background-color: rgb(39, 50, 204);
     }
 
     .home-screen {
         position: absolute;
-        top: 40px;
+        top: 10px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -99,8 +126,8 @@
         z-index: 99;
 
         position: fixed;
-        left:0px;
-        top:0px;
+        left: 0px;
+        bottom: 0px;
         width: 100%;
         padding: 2px;
         margin: 0px;
@@ -109,8 +136,5 @@
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
             sans-serif;
         font-size: 20px;
-
     }
-
-
 </style>
