@@ -195,6 +195,10 @@
     }
 </script>
 
+
+<div id="header-container">Karl 1.0</div>
+
+
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="back-button" on:click={handleBack}>home</div>
 
@@ -272,6 +276,22 @@
         margin: 0px;
         background-color: rgb(83, 79, 92);
         text-align: center;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+        font-size: 20px;
+    }
+
+    #header-container {
+        z-index: 99;
+
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        padding: 2px 20px;
+        margin: 0px;
+        background-color: rgb(83, 79, 92);
+        text-align: left;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
             sans-serif;
         font-size: 20px;
