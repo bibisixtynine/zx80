@@ -9,7 +9,7 @@
     "description": "a great virtual computer",
     "icons": [
         {
-            "src": "https://cdn.glitch.global/3d4c6936-ea72-4e35-8159-be211884b2e2/icon-512x512.png?v=1649712007462",
+            "src": "icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
