@@ -257,7 +257,7 @@
 
     .home-screen {
         position: absolute;
-        /*top: 40px;*/
+        top: env(safe-area-inset-top);
         display: flex;
         /*height: calc(100vh - 70px);*/
         overflow:scroll;
