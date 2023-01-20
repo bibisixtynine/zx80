@@ -52,9 +52,6 @@
 </head>
 
 <style>
-  body {
-    background-color: rgb(0, 0, 0);
-  }
 
   body {
     min-height: calc(100% + env(safe-area-inset-top));
@@ -64,17 +61,15 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-blend-mode:color;
-    background-color: rgba(0,0,0,0.60);
+    background-blend-mode: color;
+    background-color: rgba(0, 0, 0, 0.60);
   }
-
-
 </style>
 
 
 
 <body data-sveltekit-preload-data="hover">
-  <div style="display: contents">%sveltekit.body%</div>
+    <div style="display: contents">%sveltekit.body%</div>
 </body>
 
 </html>
