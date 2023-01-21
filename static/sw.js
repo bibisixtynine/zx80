@@ -9,7 +9,7 @@
 // What it does: it caches all requests a site makes (css, js, html, etc.) and when the app is offline it loads the cached version.
 // On the Developer Tools' Network tab, if Disable cache is checked, requests will go to the network instead of the Service Worker. Uncheck that.
 // Incognito mode skips the service worker as well!
-
+/*
 var cacheName = 'zx80'; 
 
 // Installing Service Worker
@@ -61,9 +61,9 @@ self.addEventListener('fetch', function (e) {
     })
   );
 });
+*/
 
 
-/*
 // Specify what we want added to the cache for offline use
 self.addEventListener("install", e => {
     e.waitUntil(
@@ -85,4 +85,4 @@ self.addEventListener("install", e => {
       })
     );
   });
-  */
+  
