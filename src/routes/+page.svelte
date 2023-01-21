@@ -825,13 +825,12 @@
 <div class="background" />
 
 <style>
-    .background {
-        border: solid red 2px;
+    .background {        
         position: fixed;
         left: 0px;
         top: 0px;
-        width: 80%;
-        height: 80%;
+        width: 100%;
+        height: 100%;
         background-image: url("/toto.svg");
         background-position: center;
         background-repeat: no-repeat;
