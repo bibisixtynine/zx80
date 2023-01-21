@@ -20,7 +20,8 @@ self.addEventListener('install',  function (e) {
       console.log("CACHING /INDEX.HTML");
       return cache.addAll(
         [
-          '/index.html' // == https://legends.io
+          '/index.html',
+          '/sunrise.svg' // == https://legends.io
         ]
       );
     })
