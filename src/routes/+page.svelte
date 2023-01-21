@@ -7,16 +7,6 @@
 
     let state = {
         home: true,
-        program_1: false,
-        program_2: false,
-        program_3: false,
-        program_4: false,
-        program_5: false,
-        program_6: false,
-        program_7: false,
-        program_8: false,
-        program_9: false,
-        program_10: false,
     };
 
     function handleBack(event) {
@@ -24,11 +14,9 @@
             "program-1-container"
         );
         program_1_container.style.display = "none";
-        state.program_1 = false;
         let home_screen = document.getElementById("home-screen");
         home_screen.style.display = "flex";
         state.home = true;
-        state.program_1 = false;
     }
 
     let apps = [
@@ -39,7 +27,7 @@
             backgroundColor: "rgb(39, 50, 204)",
             script: `
                     let UI = document.getElementById('ui')
-                    UI.innerHTML = '${icons.cat}'
+                    UI.innerHTML = '${icons.earth}'
                     `
         },
         {
@@ -49,7 +37,7 @@
             backgroundColor: "rgb(92, 173, 205)",
             script: `
                     let UI = document.getElementById('ui')
-                    UI.innerHTML = '${icons.cat}'
+                    UI.innerHTML = '${icons.rocket}'
                     `
         },
         {
@@ -803,8 +791,6 @@
         },
     ];
 
-    let current_id = 0;
-
     function handleClick(app) {
         if (document) {
             console.log("id: " + app.id);
@@ -823,14 +809,12 @@
                 let home_screen = document.getElementById("home-screen");
                 home_screen.style.display = "none";
                 state.home = false;
-                // show tapped/clicked app
+                // show selected app
                 let program_1_container = document.getElementById(
                     "program-1-container"
                 );
                 program_1_container.style.display = "block";
                 state.home = false;
-                state.program_1 = true;
-                current_id = app.id;
                 // execute selected app
                 debugger
                 if (app.script) eval(app.script);
@@ -844,11 +828,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="program-1-container">
-    <div id="program-1">
-        {@html apps[current_id].svg}
-        <span>Hello World!</span>
-    </div>
-    <div id="ui">Oh yeah!</div>
+    <div id="ui">#### NO PROGRAM ####</div>
 </div>
 
 <div class="home-screen" id="home-screen" display="block">
@@ -886,6 +866,7 @@
     #ui {
         color: red;
     }
+
     #program-1-container {
         display: none;
         position: absolute;
@@ -897,30 +878,10 @@
         margin: 0px;
     }
 
-    #program-1 {
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-        font-size: 60px;
-        font-weight: 700;
-
-        border: solid 1px rgb(39, 50, 204);
-        padding: 20px;
-        border-radius: 20px;
-
-        color: rgb(215, 215, 212);
-        background-color: rgba(39, 50, 204, 0.3);
-    }
-
     .home-screen {
         position: absolute;
         top: env(safe-area-inset-top);
         display: flex;
-        /*height: calc(100vh - 70px);*/
         overflow: scroll;
         flex-wrap: wrap;
         justify-content: center;
