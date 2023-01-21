@@ -1,6 +1,6 @@
 # BIBISIXTYNINE/SVELTE-VERCEL-API-OK
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/~/github.com/bibisixtynine/svelte-vercel-api-ok)
+[Edit on StackBlitz ⚡️](https://stackblitz.com/~/github.com/bibisixtynine/bibi-os)
 
 
 ## Creating a project
