@@ -37,60 +37,100 @@
             id: 0,
             svg: icons.boy,
             backgroundColor: "rgb(39, 50, 204)",
+            script: `
+                    let UI = document.getElementById('ui')
+                    UI.innerHTML = '${icons.cat}'
+                    `
         },
         {
             name: "Rocket",
             id: 1,
             svg: icons.rocket,
             backgroundColor: "rgb(92, 173, 205)",
+            script: `
+                    let UI = document.getElementById('ui')
+                    UI.innerHTML = '${icons.cat}'
+                    `
         },
         {
             name: "No",
             id: 2,
             svg: icons.redCross,
             backgroundColor: "rgb(66, 66, 66)",
+            script: `
+                    let UI = document.getElementById('ui')
+                    UI.innerHTML = '${icons.cat}'
+                    `
         },
         {
             name: "Cat",
             id: 3,
             svg: icons.cat,
             backgroundColor: "rgb(125, 184, 239)",
+            script: `
+                    let UI = document.getElementById('ui')
+                    UI.innerHTML = '${icons.cat}'
+                    `
         },
         {
             name: "Copycat",
             id: 4,
             svg: icons.copycat,
             backgroundColor: "rgb(160, 57, 152)",
+            script: `
+                    let UI = document.getElementById('ui')
+                    UI.innerHTML = '${icons.cat}'
+                    `
         },
         {
             name: "Earth",
             id: 5,
             svg: icons.earth,
             backgroundColor: "rgb(129, 87, 225)",
+            script: `
+                    let UI = document.getElementById('ui')
+                    UI.innerHTML = '${icons.cat}'
+                    `
         },
         {
             name: "Gorilla",
             id: 6,
             svg: icons.gorilla,
             backgroundColor: "rgb(39, 214, 124)",
+            script: `
+                    let UI = document.getElementById('ui')
+                    UI.innerHTML = '${icons.cat}'
+                    `
         },
         {
             name: "Morning",
             id: 7,
             svg: icons.morning,
             backgroundColor: "green",
+            script: `
+                    let UI = document.getElementById('ui')
+                    UI.innerHTML = '${icons.cat}'
+                    `
         },
         {
             name: "Saucer",
             id: 8,
             svg: icons.saucer,
             backgroundColor: "rgb(49, 36, 78)",
+            script: `
+                    let UI = document.getElementById('ui')
+                    UI.innerHTML = '${icons.cat}'
+                    `
         },
         {
             name: "Space",
             id: 9,
             svg: icons.space,
             backgroundColor: "rgb(99, 20, 225)",
+            script: `
+                    let UI = document.getElementById('ui')
+                    UI.innerHTML = '${icons.cat}'
+                    `
         },
         {
             name: "Tree",
@@ -765,9 +805,10 @@
 
     let current_id = 0;
 
-    function handleClick(id) {
+    function handleClick(app) {
         if (document) {
-            console.log("id: " + id);
+            console.log("id: " + app.id);
+            // create a new app for each click (tempo... just for test purpose)
             apps.push({
                 name: "Boy",
                 id: 1,
@@ -776,21 +817,23 @@
             });
             apps = apps; // force update home screen
             console.log("apps length: " + apps.length);
+            // if current view is home-screen, launch selected app
             if (state.home) {
+                // hide home-screen
                 let home_screen = document.getElementById("home-screen");
                 home_screen.style.display = "none";
                 state.home = false;
+                // show tapped/clicked app
                 let program_1_container = document.getElementById(
                     "program-1-container"
                 );
                 program_1_container.style.display = "block";
                 state.home = false;
                 state.program_1 = true;
-                current_id = id;
-                eval(`
-                    let UI = document.getElementById('ui')
-                    UI.innerHTML = '${icons.cat}'
-                `);
+                current_id = app.id;
+                // execute selected app
+                debugger
+                if (app.script) eval(app.script);
             }
         }
     }
@@ -811,7 +854,7 @@
 <div class="home-screen" id="home-screen" display="block">
     {#each apps as app}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div id="toto" on:click={() => handleClick(app.id)}>
+        <div id="toto" on:click={() => handleClick(app)}>
             <Icon
                 {size}
                 name={app.name}
