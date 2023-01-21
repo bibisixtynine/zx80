@@ -836,7 +836,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: color;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.6);
         z-index: -1;
     }
 
