@@ -1,4 +1,4 @@
-[Edit on StackBlitz ⚡️](https://stackblitz.com/~/github.com/bibisixtynine/bibi-os)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/~/github.com/bibisixtynine/bibi-os)
 
 # bibi-os, the personnal online (and installable) programmable computer
 
