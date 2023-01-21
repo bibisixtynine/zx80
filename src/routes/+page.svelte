@@ -831,7 +831,7 @@
         top: 0px;
         width: 100%;
         height: 100%;
-        background-image: url("/toto.svg");
+        background-image: url("/sunrise.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
