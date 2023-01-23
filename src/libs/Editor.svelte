@@ -17,20 +17,7 @@
     import const_value from './default-code.js'
     let value = const_value
     
-    const default_value = `// !! DEFAUlT !!
-// press 'run' button to execute the code!
-const node = document.getElementById('ui')
-node.style.color = 'red'
-node.style.textAlign = 'center'
-let counter = 0
-function print(param, n = node) {
-  node.innerHTML += param
-}
-setInterval( ()=> {
-  node.innerHTML = counter++
-  print('<br>coucou')
-}, 1000)
-    `
+    const default_value = '//default_value' + value
 
     let code = undefined
     let errorState = "no error"
