@@ -16,7 +16,7 @@
 
     let size = "64px";
 
-    let windowScrollYMemo = window.scrollY
+    let windowScrollYMemo = window ? window.scrollY : false
 
     let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -24,22 +24,24 @@
         home: true,
     };
 
-    function handleBack(event) {
-        // restore scrollY position
-        let program_1_container = document.getElementById(
-            "program-1-container"
-        );
+    function handleHomeClick(event) {
+        // hide app-view div
+        let program_1_container = document.getElementById("app-view");
         program_1_container.style.display = "none";
-        let home_screen = document.getElementById("home-screen");
-        home_screen.style.display = "flex";
 
+        // display home-view div
+        let home_view = document.getElementById("home-view");
+        home_view.style.display = "flex";
+
+        // restore scrollY position
         if (windowScrollYMemo && (!state.home) ) window.scroll(0,windowScrollYMemo)
         state.home = true;
     }
 
-    function handleClick(app) {
+    function handleAppClick(app) {
         if (document) {
             console.log("id: " + app.id);
+
             // create a new app for each click (tempo... just for test purpose)
             apps.push({
                 name: "Boy",
@@ -47,21 +49,23 @@
                 svg: icons.boy,
                 backgroundColor: "rgb(39, 50, 204)",
             });
-            apps = apps; // force update home screen
+            apps = apps; // force update home-view
             console.log("apps length: " + apps.length);
-            // if current view is home-screen, launch selected app
+
+            // if current view is home-view, launch selected app
             if (state.home) {
+
                 // memo window scrollY
                 windowScrollYMemo = window.scrollY
+
                 // hide home-screen
-                let home_screen = document.getElementById("home-screen");
-                home_screen.style.display = "none";
+                let home_view = document.getElementById("home-view");
+                home_view.style.display = "none";
                 state.home = false;
+
                 // show selected app
-                let program_1_container = document.getElementById(
-                    "program-1-container"
-                );
-                program_1_container.style.display = "block";
+                let app_view = document.getElementById("app-view");
+                app_view.style.display = "block";
                 state.home = false;
                 // execute selected app
                 if (app.script) eval(app.script);
@@ -76,17 +80,17 @@
 <!-------------------------------------------------------->
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div id="back-button" on:click={handleBack}>home</div>
+<div id="back-button" on:click={handleHomeClick}>home</div>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div id="program-1-container">
+<div id="app-view">
     <div id="ui">#### NO PROGRAM ####</div>
 </div>
 
-<div class="home-screen" id="home-screen" display="block">
+<div class="home-view" id="home-view" display="block">
     {#each apps as app}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div id="toto" on:click={() => handleClick(app)}>
+        <div id="toto" on:click={() => handleAppClick(app)}>
             <Icon
                 {size}
                 name={app.name}
@@ -123,7 +127,7 @@
         color: red;
     }
 
-    #program-1-container {
+    #app-view {
         display: none;
         position: absolute;
         top: 40px;
@@ -134,7 +138,7 @@
         margin: 0px;
     }
 
-    .home-screen {
+    .home-view {
         position: absolute;
         top: env(safe-area-inset-top);
         display: flex;
