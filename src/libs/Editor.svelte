@@ -16,11 +16,10 @@
     let value = const_value
     const default_value = '//default_value' + value
 
-    let code = undefined
     let mounted = false
 
     onMount( ()=> {
-        code = loadFromBrowserLocalStorage()
+        const code = loadFromBrowserLocalStorage()
         if (code) {
             value = code;
         }
@@ -28,7 +27,7 @@
     })
 
     $: {
-        code = loadFromBrowserLocalStorage(filename)
+        const code = loadFromBrowserLocalStorage(filename)
         if (code) {
             value = code;
         } else {
@@ -44,7 +43,7 @@
     */
     function loadFromBrowserLocalStorage(filename) {
         if ( typeof localStorage !== 'undefined') {
-            let code = localStorage.getItem("mysupercomputer-code-" + filename )
+            const code = localStorage.getItem("mysupercomputer-code-" + filename )
             return code
         }
     }
