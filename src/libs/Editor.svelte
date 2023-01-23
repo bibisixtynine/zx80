@@ -12,15 +12,11 @@
 
     export let filename = 'default'
 
-    let visible = true;
-
     import const_value from './default-code.js'
     let value = const_value
-    
     const default_value = '//default_value' + value
 
     let code = undefined
-    let errorState = "no error"
     let mounted = false
 
     onMount( ()=> {
@@ -83,11 +79,9 @@
 
         try {
             document.getElementById('ui').style.border = 'solid green 2px'
-            errorState = '✅'
             Function(code)(window);
         } catch (err) {
             document.getElementById('ui').style.border = 'solid red 2px'
-            errorState = '❌!'
             console.error(err);
         }
     };
@@ -106,13 +100,9 @@
 // HTML
 //
 -->
-<label><input type="checkbox" bind:checked={visible} /> </label>
-
 <CodeMirror bind:value lang={javascript()} theme={oneDark} />
 
-<div class="title"> {errorState}</div>
-
-<div id='ui'>loading...</div>
+<div id='ui'>...loading...</div>
 <!--
 //
 // HTML
@@ -127,15 +117,6 @@
 //
 -->
 <style>
-    .title {
-        display:fixed;
-        top: 40px;
-        left: 40px;
-        color: salmon;
-        text-align: center;
-        padding: 0;
-        margin: 0;
-    }
     #ui {
         font-family: monospace;
         color: green;
