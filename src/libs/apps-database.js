@@ -5,11 +5,12 @@ export default [
     {
         name: "Boy",
         id: 0,
-        svg: icons.boy,
-        backgroundColor: "rgb(39, 50, 204)",
+        svg: icons.plus,
+        backgroundColor: "rgb(0, 0, 255)",
         script: `
-                let UI = document.getElementById('ui')
-                UI.innerHTML = '${icons.earth}'
+                newApp();
+                console.log('handle');
+                handleHomeClick();
                 `
     },
     {

@@ -8,6 +8,7 @@
 <!-------------------------------------------------------->
 
 <script>
+    import { onMount } from 'svelte';
     import Icon from "../libs/Icon.svelte";
     import icons from "../libs/icons.js";
     import apps_database from "../libs/apps-database.js"
@@ -16,7 +17,8 @@
 
     let size = "64px";
 
-    let windowScrollYMemo = window ? window.scrollY : false
+    let windowScrollYMemo = false
+    onMount( ()=> windowScrollYMemo = window.scrollY )
 
     let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -25,11 +27,11 @@
     };
 
     function handleHomeClick(event) {
-        // hide app-view div
+        // hide app-view
         let program_1_container = document.getElementById("app-view");
         program_1_container.style.display = "none";
 
-        // display home-view div
+        // display home-view
         let home_view = document.getElementById("home-view");
         home_view.style.display = "flex";
 
@@ -38,11 +40,9 @@
         state.home = true;
     }
 
-    function handleAppClick(app) {
+    // create a new app and add to home-view
+    function newApp() {
         if (document) {
-            console.log("id: " + app.id);
-
-            // create a new app for each click (tempo... just for test purpose)
             apps.push({
                 name: "Boy",
                 id: 1,
@@ -50,24 +50,30 @@
                 backgroundColor: "rgb(39, 50, 204)",
             });
             apps = apps; // force update home-view
-            console.log("apps length: " + apps.length);
+        }
+    }
 
-            // if current view is home-view, launch selected app
+    function handleAppClick(app) {
+        if (document) {
+            // if current view is home-view :
+            // - hide home-view,
+            // - display app-view
+            // - launch app
             if (state.home) {
 
                 // memo window scrollY
                 windowScrollYMemo = window.scrollY
 
-                // hide home-screen
+                // hide home-view
                 let home_view = document.getElementById("home-view");
                 home_view.style.display = "none";
                 state.home = false;
 
-                // show selected app
+                // display app-view
                 let app_view = document.getElementById("app-view");
                 app_view.style.display = "block";
-                state.home = false;
-                // execute selected app
+
+                // launch selected app
                 if (app.script) eval(app.script);
             }
         }
