@@ -28,6 +28,8 @@
         home: true,
     };
 
+    let runningApp = 'no app running !';
+
     function handleHomeClick(event) {
         // hide app-view
         let program_1_container = document.getElementById("app-view");
@@ -62,6 +64,7 @@
             // - display app-view
             // - launch app
             if (state.home) {
+                runningApp = app.name
 
                 // memo window scrollY
                 windowScrollYMemo = window.scrollY
@@ -76,10 +79,13 @@
                 app_view.style.display = "block";
 
                 // launch selected app
-                if (app.script) eval(app.script);
+                //if (app.script) eval(app.script);
+
             }
         }
     }
+
+    $:console.log('running app: ',runningApp)
 </script>
 
 
@@ -92,7 +98,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="app-view">
-    <Editor />
+    <Editor filename={runningApp}/>
 </div>
 
 <div class="home-view" id="home-view" display="block">
@@ -129,10 +135,6 @@
         background-blend-mode: color;
         background-color: rgba(0, 0, 0, 0.6);
         z-index: -1;
-    }
-
-    #ui {
-        color: red;
     }
 
     #app-view {

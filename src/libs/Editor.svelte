@@ -4,16 +4,32 @@
 // SCRIPT
 //
 -->
-<script lang='ts'>
+<script>
     import CodeMirror from "svelte-codemirror-editor";
     import { javascript } from "@codemirror/lang-javascript";
     import { oneDark } from "@codemirror/theme-one-dark"
 	import { onMount } from 'svelte';
 
+    export let filename = 'default'
+
     let visible = true;
-    import { fly, fade } from 'svelte/transition';
 
     let value = `// press 'run' button to execute the code!
+const node = document.getElementById('ui')
+node.style.color = 'red'
+node.style.textAlign = 'center'
+let counter = 0
+function print(param, n = node) {
+  node.innerHTML += param
+}
+setInterval( ()=> {
+  node.innerHTML = counter++
+  print('<br>coucou')
+}, 1000)
+    `
+
+    const default_value = `// !! DEFAUlT !!
+// press 'run' button to execute the code!
 const node = document.getElementById('ui')
 node.style.color = 'red'
 node.style.textAlign = 'center'
@@ -40,11 +56,20 @@ setInterval( ()=> {
         mounted = true
     })
 
+    $: {
+        code = loadFromBrowserLocalStorage(filename)
+        if (code) {
+            value = code;
+        } else {
+            value = default_value
+        }
+        console.log("loaded in Editor: ",filename)
+    }
     $: evaluateCode(value)
 
-    function loadFromBrowserLocalStorage() {
+    function loadFromBrowserLocalStorage(filename) {
         if ( typeof localStorage !== 'undefined') {
-            let code = localStorage.getItem("mysupercomputer-code")
+            let code = localStorage.getItem("mysupercomputer-code-" + filename )
             return code
         }
     }
@@ -54,7 +79,7 @@ setInterval( ()=> {
 */
     function saveToBrowserLocalStorage(code) {
         if ( typeof localStorage !== 'undefined') {
-            localStorage.setItem("mysupercomputer-code", code);
+            localStorage.setItem("mysupercomputer-code-" + filename, code);
         }
     }
 
