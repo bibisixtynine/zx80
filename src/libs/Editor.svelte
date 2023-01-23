@@ -43,6 +43,9 @@
 
     $: evaluateCode(value)
 
+    /**
+    * @param {string} filename
+    */
     function loadFromBrowserLocalStorage(filename) {
         if ( typeof localStorage !== 'undefined') {
             let code = localStorage.getItem("mysupercomputer-code-" + filename )
@@ -51,8 +54,8 @@
     }
 
     /**
-* @param {string} code
-*/
+    * @param {string} code
+    */
     function saveToBrowserLocalStorage(code) {
         if ( typeof localStorage !== 'undefined') {
             localStorage.setItem("mysupercomputer-code-" + filename, code);
@@ -61,13 +64,10 @@
 
     function resetUI() {
         return;
-        let ui = document.getElementById('toto');
-        //removeChildren(ui)
     }
 
     function resetTimers() {
         let maxId = setTimeout(function () {}, 0);
-
         // @ts-ignore
         for (var i = 0; i < maxId; i += 1) {
         clearTimeout(i);
@@ -82,9 +82,11 @@
         saveToBrowserLocalStorage(code)
 
         try {
+            document.getElementById('ui').style.border = 'solid green 2px'
             errorState = '✅'
             Function(code)(window);
         } catch (err) {
+            document.getElementById('ui').style.border = 'solid red 2px'
             errorState = '❌!'
             console.error(err);
         }
@@ -138,8 +140,7 @@
         font-family: monospace;
         color: green;
         background-color: #001000;
-        border: solid;
-        border-color: green;
+        border: solid green 2px;
         border-radius: 10px;
         padding: 5px;
     }
