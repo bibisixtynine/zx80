@@ -1,7 +1,18 @@
+<!------------------------------------------------------------------->
+<!-- +page.svelte -------------------------------------------------->
+<!----------------------------------------------------------------->
+
+
+<!---------------------------------------------------------->
+<!--<SCRIPT>----------------------------------------------->
+<!-------------------------------------------------------->
+
 <script>
     import Icon from "../libs/Icon.svelte";
     import icons from "../libs/icons.js";
-    import apps from "../libs/apps-database.js"
+    import apps_database from "../libs/apps-database.js"
+
+    let apps = apps_database
 
     let size = "48px";
     let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -19,8 +30,6 @@
         home_screen.style.display = "flex";
         state.home = true;
     }
-
-    
 
     function handleClick(app) {
         if (document) {
@@ -47,12 +56,16 @@
                 program_1_container.style.display = "block";
                 state.home = false;
                 // execute selected app
-                debugger
                 if (app.script) eval(app.script);
             }
         }
     }
 </script>
+
+
+<!---------------------------------------------------------->
+<!--<BODY>------------------------------------------------->
+<!-------------------------------------------------------->
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="back-button" on:click={handleBack}>home</div>
@@ -78,6 +91,10 @@
 
 <div class="background" />
 
+
+<!---------------------------------------------------------->
+<!--<STYLE>------------------------------------------------>
+<!-------------------------------------------------------->
 <style>
     .background {        
         position: fixed;
