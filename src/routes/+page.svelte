@@ -8,10 +8,12 @@
 <!-------------------------------------------------------->
 
 <script>
+    import Editor from '../libs/Editor.svelte'
     import { onMount } from 'svelte';
     import Icon from "../libs/Icon.svelte";
     import icons from "../libs/icons.js";
     import apps_database from "../libs/apps-database.js"
+    
 
     let apps = apps_database // default is const for import
 
@@ -90,7 +92,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="app-view">
-    <div id="ui">#### NO PROGRAM ####</div>
+    <Editor />
 </div>
 
 <div class="home-view" id="home-view" display="block">
