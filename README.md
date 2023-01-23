@@ -1,5 +1,8 @@
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/~/github.com/bibisixtynine/bibi-os)
 
+[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/bibisixtynine/bibi-os)
+
+
 # bibi-os, the personnal online (and installable) programmable computer
 
 This is a very early ALPHA version of an online computer... 
