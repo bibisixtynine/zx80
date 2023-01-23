@@ -12,9 +12,12 @@
     import icons from "../libs/icons.js";
     import apps_database from "../libs/apps-database.js"
 
-    let apps = apps_database
+    let apps = apps_database // default is const for import
 
-    let size = "48px";
+    let size = "64px";
+
+    let windowScrollYMemo = window.scrollY
+
     let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     let state = {
@@ -22,12 +25,15 @@
     };
 
     function handleBack(event) {
+        // restore scrollY position
         let program_1_container = document.getElementById(
             "program-1-container"
         );
         program_1_container.style.display = "none";
         let home_screen = document.getElementById("home-screen");
         home_screen.style.display = "flex";
+
+        if (windowScrollYMemo && (!state.home) ) window.scroll(0,windowScrollYMemo)
         state.home = true;
     }
 
@@ -45,6 +51,8 @@
             console.log("apps length: " + apps.length);
             // if current view is home-screen, launch selected app
             if (state.home) {
+                // memo window scrollY
+                windowScrollYMemo = window.scrollY
                 // hide home-screen
                 let home_screen = document.getElementById("home-screen");
                 home_screen.style.display = "none";
