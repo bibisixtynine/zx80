@@ -14,20 +14,9 @@
 
     let visible = true;
 
-    let value = `// press 'run' button to execute the code!
-const node = document.getElementById('ui')
-node.style.color = 'red'
-node.style.textAlign = 'center'
-let counter = 0
-function print(param, n = node) {
-  node.innerHTML += param
-}
-setInterval( ()=> {
-  node.innerHTML = counter++
-  print('<br>coucou')
-}, 1000)
-    `
-
+    import const_value from './default-code.js'
+    let value = const_value
+    
     const default_value = `// !! DEFAUlT !!
 // press 'run' button to execute the code!
 const node = document.getElementById('ui')
@@ -44,7 +33,6 @@ setInterval( ()=> {
     `
 
     let code = undefined
-    let counter = 0
     let errorState = "no error"
     let mounted = false
 
@@ -65,6 +53,7 @@ setInterval( ()=> {
         }
         console.log("loaded in Editor: ",filename)
     }
+
     $: evaluateCode(value)
 
     function loadFromBrowserLocalStorage(filename) {
