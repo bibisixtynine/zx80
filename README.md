@@ -4,11 +4,11 @@
 
 [![Launch web app](static/launch-web-app.svg)](https://www.zx80.app)
 
-<div>
+<div style="font-size:40px">
 <span align="center">
   <a href="https://www.zx80.app"><img src="static/zx80-homescreen.png" height="auto" width="200" style="border-radius:50%"></a>
 </span>
-<span style="font-size:40px"> hello !</span>
+<span> hello !</span>
 </div>
 
 
