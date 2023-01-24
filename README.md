@@ -2,7 +2,7 @@
 
 [![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/bibisixtynine/bibi-os)
 
-[![Launch web app](static/launch-web-app.svg)](https:///pr.new/bibisixtynine/bibi-os)
+[![Launch web app](static/launch-web-app-2.svg)](https:///pr.new/bibisixtynine/bibi-os)
 
 <p align="center">
   <img src="static/homescreen.jpeg" width="200" title="screen shot" alt="screen shot">
