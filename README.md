@@ -5,7 +5,7 @@
 [![Launch web app](static/launch-web-app.svg)](https://www.zx80.app)
 
 <p align="center">
-  <img src="static/homescreen.jpeg" width="200" title="screen shot" alt="screen shot" style="border-radius:20px">
+  <img src="static/homescreen.jpeg" width="200" title="screen shot" alt="screen shot">
 </p>
 
 # bibi-os, the personnal online (and installable) programmable computer
