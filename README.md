@@ -2,7 +2,7 @@
 
 [![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/bibisixtynine/bibi-os)
 
-<a href="https://www.zx80.app"><p style="background-color:orange; color: white; padding:10px; border-radius:5px; font-family:monospace; font-weight:700"> try it online </p></a>
+<p style="background-color:orange; color: white; padding:10px; border-radius:5px; font-family:monospace; font-weight:700"> try it online </p>
 
 <p align="center">
   <img src="static/homescreen.jpeg" width="200" title="screen shot" alt="screen shot">
