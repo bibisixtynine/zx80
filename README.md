@@ -3,7 +3,7 @@
 [![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/bibisixtynine/bibi-os)
 
 
-![What is this](static/homescreen.jpeg)
+![What is this](static/homescreen.jpeg | width=100)
 
 # bibi-os, the personnal online (and installable) programmable computer
 
