@@ -89,7 +89,6 @@
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
 
-
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="back-button" on:click={handleHomeClick}>home</div>
 
@@ -149,7 +148,7 @@
 
     .home-view {
         position: absolute;
-        top: env(safe-area-inset-top);
+        top: calc(env(safe-area-inset-top) + 40px);
         display: flex;
         overflow: scroll;
         flex-wrap: wrap;
