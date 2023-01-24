@@ -2,19 +2,10 @@
 
 [![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/bibisixtynine/bibi-os)
 
-[![Launch web app](static/launch-web-app-2.svg)](https://www.zx80.app)
+[![Launch web app](static/launch-web-app.svg)](https://www.zx80.app)
 
 <p align="center">
   <img src="static/homescreen.jpeg" width="200" title="screen shot" alt="screen shot">
-</p>
-
-<p>
-<iframe
-    title="zx80"
-    width="200"
-    height="300"
-    src="https://www.zx80.app">
-</iframe>
 </p>
 
 # bibi-os, the personnal online (and installable) programmable computer
