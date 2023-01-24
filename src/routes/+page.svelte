@@ -7,8 +7,8 @@
     import Editor from '../libs/Editor.svelte'
     import { onMount } from 'svelte';
     import Icon from "../libs/Icon.svelte";
-    import icons from "../libs/icons.js";
-    import apps_database from "../libs/apps-database.js"
+    import icons from "../libs/database-icons.js";
+    import apps_database from "../libs/database-apps.js"
     
 
     let apps = apps_database // default is const for import

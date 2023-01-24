@@ -13,7 +13,7 @@
 	
     import { onMount } from 'svelte';
 
-    import const_value from './default-code.js'
+    import const_value from './database-default-code.js'
     
     let value = const_value
     const default_value = '//default_value' + value
