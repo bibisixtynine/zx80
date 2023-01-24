@@ -5,19 +5,23 @@
 [![Launch web app](static/launch-web-app.svg)](https://www.zx80.app)
 
 <p align="center">
-  <a href="https://www.zx80.app"><img src="static/homescreen_title.png" height="auto" width="80%"></a>
+  <a href="https://www.zx80.app"><img src="static/homescreen_title.png" height="auto" width="70%"></a>
 </p>
 
-# bibi-os, the personnal online (and installable) programmable computer
 
-This is a very early ALPHA version of an online computer... 
-...installable as a PWA on OSX, iOS, android, linux, windows etc... with :
-- Safari for iOS
-- Chrome or microsoft Edge for osx, windows, linux...
+# ZX80.app, the webapp programmable computer
 
-It looks like a smarphone home screen, can play, edit and share webapp
+WARNING : this app is at its very early stage of development... less than ALPHA !
+
+It looks like a smartphone home-screen, and (will) allow the use, (simplified) development, and (easy) share of webapps.
+
+This app works better if locally installed on a smartphone, as it is a PWA (see how at the end of the page), and is will be usable offline.
+
+For the installation process, use :
+- iPod/iPhone/iPad : Apple Safari
+- OSX, Windows, Linux : Google Chrome (or Microsoft Edge)
 
 
-# how to install a PWA on any system ?
+# how to install ZX80.app on any platform ?
 
-Here is [a link for some more info on how to install a PWA](https://www.cdc.gov/niosh/mining/content/hearingloss/installPWA.html#:~:text=If%20the%20site%20is%20a,the%20%22three%20dot%22%20menu.)
+Here is [a link for some more info on how to install a PWA webapp](https://www.cdc.gov/niosh/mining/content/hearingloss/installPWA.html#:~:text=If%20the%20site%20is%20a,the%20%22three%20dot%22%20menu.)
