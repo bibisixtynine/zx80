@@ -8,12 +8,14 @@
   <img src="static/homescreen.jpeg" width="200" title="screen shot" alt="screen shot">
 </p>
 
+<p>
 <iframe
     title="zx80"
     width="200"
     height="300"
     src="https://www.zx80.app">
 </iframe>
+</p>
 
 # bibi-os, the personnal online (and installable) programmable computer
 
