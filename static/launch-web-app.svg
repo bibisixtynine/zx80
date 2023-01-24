@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg fill="none" height="32" viewBox="0 0 157 32" width="157" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <style bx:fonts="Alata">@import url(https://fonts.googleapis.com/css2?family=Alata%3Aital%2Cwght%400%2C400&amp;display=swap);</style>
+  </defs>
+  <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="117.438" x2="117.438" y1="-5.6" y2="36.8" gradientTransform="matrix(0.999999, -0.001407, 0.001573, 1.117975, 0.008926, 0.82591)">
+    <stop offset="0" style="stop-color: rgb(227, 218, 182);"/>
+    <stop offset="0.219" style="stop-color: rgb(184, 177, 31);"/>
+    <stop offset="1" style="stop-color: rgb(159, 107, 29);"/>
+  </linearGradient>
+  <rect fill="url(#a)" height="32" rx="4" width="157"/>
+  <path d="m32 0h1v32h-1z" style="fill: rgb(221, 200, 169);"/>
+  <path d="M 16.651 15.486 Q 16.883 15.344 17.181 15.371 Q 17.513 15.402 17.791 15.631 Q 18.097 15.885 18.223 16.289 Q 18.361 16.732 18.235 17.203 Q 18.098 17.715 17.694 18.095 Q 17.259 18.504 16.651 18.631 Q 16.001 18.767 15.352 18.539 Q 14.661 18.297 14.179 17.716 Q 13.668 17.102 13.54 16.289 Q 13.405 15.432 13.734 14.605 Q 14.081 13.736 14.839 13.15 Q 15.633 12.537 16.651 12.408 Q 17.714 12.274 18.72 12.706 Q 19.767 13.156 20.456 14.092 Q 21.172 15.065 21.301 16.289 Q 21.435 17.558 20.9 18.742 Q 20.347 19.968 19.233 20.76 Q 18.081 21.579 16.651 21.708 Q 15.176 21.842 13.813 21.205 Q 12.409 20.548 11.513 19.255 Q 10.592 17.925 10.462 16.289 Q 10.329 14.607 11.069 13.066 Q 11.829 11.484 13.3 10.485 Q 14.809 9.46 16.651 9.331 Q 18.539 9.198 20.258 10.041 Q 22.019 10.904 23.121 12.553 Q 24.249 14.241 24.379 16.289 Q 24.511 18.383 23.566 20.281 Q 22.599 22.22 20.771 23.426 Q 18.905 24.656 16.651 24.786 Q 14.351 24.919 12.274 23.87 Q 10.156 22.8 8.848 20.794 Q 7.514 18.749 7.384 16.289 Q 7.252 13.783 8.404 11.527 Q 9.577 9.231 11.761 7.82 Q 13.985 6.383 16.651 6.253 Q 16.658 6.253 16.651 6.253" style="stroke-width: 2px; stroke-linecap: round; stroke-opacity: 0.91; stroke: rgb(137, 80, 29); fill: rgba(195, 166, 166, 0);" bx:shape="spiral 16.651 16.289 0.803 10.036 0 1080 1@0a211205"/>
+  <text style="fill: rgb(255, 255, 255); font-family: Alata; font-size: 13px; white-space: pre;" x="41.714" y="20.596">Lauch web app !</text>
+</svg>
