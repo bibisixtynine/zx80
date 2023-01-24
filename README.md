@@ -8,6 +8,9 @@
   <img src="static/homescreen.jpeg" width="200" title="screen shot" alt="screen shot">
 </p>
 
+<a href="https://www.zx80.ap"><img src="static/homescreen.jpeg" height="auto" width="200" style="border-radius:50%"></a>
+
+
 # bibi-os, the personnal online (and installable) programmable computer
 
 This is a very early ALPHA version of an online computer... 
