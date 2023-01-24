@@ -4,14 +4,9 @@
 
 [![Launch web app](static/launch-web-app.svg)](https://www.zx80.app)
 
-<div style="font-size:40">
-<span align="center">
-  <a href="https://www.zx80.app"><img src="static/zx80-homescreen.png" height="auto" width="200" style="border-radius:50%"></a>
-</span>
-<div> hello !</div>
-</div>
-
-
+<p align="center">
+  <a href="https://www.zx80.app"><img src="static/homescreen_title.png" height="auto" width="80%"></a>
+</p>
 
 # bibi-os, the personnal online (and installable) programmable computer
 
