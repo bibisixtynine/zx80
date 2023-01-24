@@ -11,14 +11,12 @@
     import apps_database from "../libs/database-apps.js"
     
 
-    let apps = apps_database // default is const for import
+    let apps = apps_database
 
-    let size = "64px";
+    let iconSize = "64px";
 
-    let windowScrollYMemo = false
+    let windowScrollYMemo = undefined
     onMount( ()=> windowScrollYMemo = window.scrollY )
-
-    let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     let state = {
         home: true,
@@ -103,7 +101,7 @@
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div id="toto" on:click={() => handleAppClick(app)}>
             <Icon
-                {size}
+                size={iconSize}
                 name={app.name}
                 svg={app.svg}
                 backgroundColor={app.backgroundColor}
