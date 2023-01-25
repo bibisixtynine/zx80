@@ -170,7 +170,6 @@
         text-align: center;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
             sans-serif;
-        font-weight: 700;
         font-size: 20px;
     }
 </style>
