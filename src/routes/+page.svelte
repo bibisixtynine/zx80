@@ -96,7 +96,7 @@
     <Editor filename={runningApp}/>
 </div>
 
-<div class="home-view" id="home-view" display="block">
+<div id="home-view" display="block">
     {#each apps as app}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div id="toto" on:click={() => handleAppClick(app)}>
@@ -110,7 +110,7 @@
     {/each}
 </div>
 
-<div class="background" />
+<div id="background" />
 
 
 <!-------------------------------------------------------->
@@ -119,7 +119,7 @@
 
 
 <style>
-    .background {        
+    #background {        
         position: fixed;
         left: 0px;
         top: 0px;
@@ -145,7 +145,7 @@
         margin: 0px;
     }
 
-    .home-view {
+    #home-view {
         position: absolute;
         top: calc(env(safe-area-inset-top) + 20px);
         display: flex;
