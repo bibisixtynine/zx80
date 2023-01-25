@@ -41,3 +41,20 @@ Here is [a link for some more info on how to install a PWA webapp](https://www.c
 - No need of developper account, apple store or google store, specific hardware configuration : just a computer, tablet or smartphone with any operating system... able to run Safari (ios) or Google Chrome
 
 - 'modern' javascript is used for coding
+
+
+# Many Thanks to
+
+- Code Mirror 6 and Marijn Haverbeke
+- Svelte and Rich Harris
+- Vite and Evan You
+- all the contributors of these free wonderful open-source tools
+
+and also 
+
+- Stackblitz, Eric Simons and his team for the amazing online Codeflow IDE (in fact... much more in practice)... Waou !
+- Vercel, Guillermo Rauch and his team for it's great web deployement solution
+
+and from my deep heart
+
+- Sir Clive Sinclair and it's zx80,81,spectrum and QL computer family !
