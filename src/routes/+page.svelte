@@ -89,7 +89,7 @@
 
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div id="back-button" on:click={handleHomeClick}>home</div>
+<div id="home-button" on:click={handleHomeClick}>home</div>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="app-view">
@@ -155,13 +155,17 @@
         gap: 22px;
     }
 
-    #back-button {
-        z-index: 99;
+    #home-button {
+        z-index: 9;
+        border: solid 1px red;
+        border-radius: 10px;
+        
 
         position: fixed;
-        left: 0px;
+        left: 50%;
+        transform: translate(-50%,0%);
         bottom: 0px;
-        width: 100%;
+        width: 90%;
         padding: 12px;
         margin: 0px;
         background-color: rgb(83, 79, 92);
