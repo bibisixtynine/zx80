@@ -16,7 +16,7 @@
     import const_value from './database-default-code.js'
     
     let value = const_value
-    const default_value = '//default_value' + value
+    const default_value = '//' + value
 
     let mounted = false
 

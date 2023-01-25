@@ -1,4 +1,5 @@
-export default (`// 🤓 DEFAULT EXAMPLE
+export default (`
+// 🤓 DEFAULT EXAMPLE
 
 
 
@@ -11,6 +12,11 @@ export default (`// 🤓 DEFAULT EXAMPLE
 
 
 
+
+
+// 👽 Just type some space anywhere...
+// ... the app will automaticelly execute in a green bordered rectangle
+// or red bordered ... if there is a bug...
 
 //////////////////////////
 //
