@@ -1,13 +1,8 @@
 # zx80.app, the online programmable computer
 
-[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/bibisixtynine/zx80)
-
-[![Launch web app](static/launch-web-app.svg)](https://www.zx80.app)
-
 <p align="center">
   <a href="https://www.zx80.app"><img src="static/homescreen_title.png" height="auto" width="70%"></a>
 </p>
-
 
 ## What's zx80.app ?
 
@@ -66,8 +61,8 @@ and from my deep heart
 
 At the top of this readme, there are 2 buttons :
 
-- press [Launch web app] to run the app
+- press [![Launch web app](static/launch-web-app.svg)](https://www.zx80.app) to run the app
 
-- press [Open with Codeflow] to dive into the code
+- press [![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/bibisixtynine/zx80) to dive into the code
   -> src/app.html
   -> src/routes/+page.svelte
