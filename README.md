@@ -59,10 +59,12 @@ and from my deep heart
 
 ## Where to go from there ?
 
-At the top of this readme, there are 2 buttons :
+press one of these buttons :
 
-- press [![Launch web app](static/launch-web-app.svg)](https://www.zx80.app) to run the app
+[![Launch web app](static/launch-web-app.svg)](https://www.zx80.app) to run the app
 
-- press [![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/bibisixtynine/zx80) to dive into the code
-  -> src/app.html
-  -> src/routes/+page.svelte
+[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/bibisixtynine/zx80) to dive into the code
+ 
+in Codeflow IDE, everything starts in :
+- src/app.html
+- src/routes/+page.svelte
