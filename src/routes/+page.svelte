@@ -130,7 +130,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-blend-mode: color;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.5);
         z-index: -1;
     }
 
@@ -165,7 +165,7 @@
         width: 100%;
         padding: 12px;
         margin: 0px;
-        background-color: rgb(83, 79, 92);
+        background-color: rgba(62, 173, 237, 0.349);
         color: blanchedalmond;
         text-align: center;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
