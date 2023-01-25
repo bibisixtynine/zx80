@@ -61,9 +61,9 @@ and from my deep heart
 
 press one of these buttons :
 
-[![Launch web app](static/launch-web-app.svg)](https://www.zx80.app) to run the app
+[![Launch web app](static/launch-web-app.svg)](https://www.zx80.app)
 
-[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/bibisixtynine/zx80) to dive into the code
+[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/bibisixtynine/zx80)
  
 in Codeflow IDE, everything starts in :
 - src/app.html
