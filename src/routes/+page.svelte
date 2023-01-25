@@ -156,16 +156,13 @@
     }
 
     #home-button {
-        z-index: 9;
-        border: solid 1px red;
-        border-radius: 10px;
-        
+        z-index: 9;        
 
         position: fixed;
         left: 50%;
         transform: translate(-50%,0%);
         bottom: 0px;
-        width: 90%;
+        width: 100%;
         padding: 12px;
         margin: 0px;
         background-color: rgb(83, 79, 92);
