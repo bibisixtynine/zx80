@@ -14,12 +14,10 @@
   onMount(() => {
     windowScrollYMemo = window.scrollY;
     document.body.addEventListener("beforecopy", (e) => {
-      console.log("before");
       e.preventDefault();
     });
 
     document.body.addEventListener("beforecut", (e) => {
-      console.log("beforecut");
       e.preventDefault();
     });
   });
