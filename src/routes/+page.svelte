@@ -13,11 +13,11 @@
   let windowScrollYMemo = undefined;
   onMount(() => {
     windowScrollYMemo = window.scrollY;
-    document.body.addEventListener("beforecopy", (e) => {
+    document.addEventListener("beforecopy", (e) => {
       e.preventDefault();
     });
 
-    document.body.addEventListener("beforecut", (e) => {
+    document.addEventListener("beforecut", (e) => {
       e.preventDefault();
     });
   });
