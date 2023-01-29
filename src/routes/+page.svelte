@@ -5,6 +5,10 @@
   import Icon from "../libs/Icon.svelte";
   import icons from "../libs/database-icons.js";
   import apps_database from "../libs/database-apps.js";
+  import Network from "../libs/network-lib"
+
+  let net = undefinded;
+  
 
   let apps = apps_database;
 
@@ -12,6 +16,8 @@
 
   let windowScrollYMemo = undefined;
   onMount(() => {
+    net = new Network()
+    
     windowScrollYMemo = window.scrollY;
     document.addEventListener("beforecopy", (e) => {
       e.preventDefault();
