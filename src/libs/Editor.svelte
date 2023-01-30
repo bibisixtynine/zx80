@@ -111,10 +111,17 @@
     #ui {
         font-family: monospace;
         color: green;
-        background-color: #001000;
         border: solid green 2px;
         border-radius: 10px;
         padding: 5px;
+
+  position: fixed;
+  top: 33px;
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 30%;
+  overflow: scroll;
+  text-align: center;
     }
 </style>
 
