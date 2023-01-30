@@ -79,7 +79,13 @@
         saveToBrowserLocalStorage(code)
 
         try {
-            document.getElementById('ui').style.border = 'solid green 2px'
+            const ui = document.getElementById('ui')
+            ui.style.border = 'solid green 2px'
+            const iframe = document.createElement('iframe')
+            iframe.srcdoc = '<script type="module">' + code + '</script>'
+            const ui = document.getElementById('ui')
+            ui.innerHTML = ''
+            ui.appendChild(iframe)
             Function(code)(window);
         } catch (err) {
             document.getElementById('ui').style.border = 'solid red 2px'
