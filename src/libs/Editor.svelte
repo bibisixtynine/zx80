@@ -15,6 +15,8 @@
 
     import const_value from './database-default-code.js'
     
+    import execute from './execute.js'
+
     let value = const_value
     const default_value = '//' + value
 
@@ -80,13 +82,8 @@
 
         try {
             const ui = document.getElementById('ui')
-            ui.style.border = 'solid green 2px'
-            const iframe = document.createElement('iframe')
-            iframe.srcdoc = '<script type="module">' + code + '</script>'
-            const ui = document.getElementById('ui')
-            ui.innerHTML = ''
-            ui.appendChild(iframe)
-            Function(code)(window);
+            execute(ui,code)
+            //Function(code)(window);
         } catch (err) {
             document.getElementById('ui').style.border = 'solid red 2px'
             console.error(err);
