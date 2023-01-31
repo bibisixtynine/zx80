@@ -32,7 +32,7 @@ debugger
     mounted = true;
   });
 
-  $: {
+  
     const code = loadFromBrowserLocalStorage(app.name);
     if (code) {
       value = code;
@@ -40,7 +40,7 @@ debugger
       value = app.script;
     }
     //console.log("loaded in Editor: ", app.name);
-  }
+  
 
   $: evaluateCode(value);
 
