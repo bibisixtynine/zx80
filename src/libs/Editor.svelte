@@ -17,7 +17,7 @@
   import { onMount } from "svelte";
 
   import execute from "./execute.js";
-
+debugger
   let value = '// ## DEFAULT INITIAL VALUE ##';
 
   const default_value = "//" + value;
@@ -39,7 +39,7 @@
     } else {
       value = app.script;
     }
-    console.log("loaded in Editor: ", app.name);
+    //console.log("loaded in Editor: ", app.name);
   }
 
   $: evaluateCode(value);
