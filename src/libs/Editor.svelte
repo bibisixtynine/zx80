@@ -24,18 +24,32 @@
   let mounted = false;
 
   onMount(() => {
+    /*const code = loadFromBrowserLocalStorage(app.name);
+    if (code) {
+      value = code;
+    } else {
+      value = app.script
+    }
+    console.log('Editor Mounted with ' + app.name)*/
+    
+    mounted = true;
+  });
+
+  $:  { 
+    console.log('NEW APP IN EDITOR :' + app.name);
     const code = loadFromBrowserLocalStorage(app.name);
     if (code) {
       value = code;
     } else {
       value = app.script
     }
-    console.log('Editor Mounted with ' + app.name)
-    mounted = true;
-  });
 
+      }
 
-  $: if (value) evaluateCode(value);
+  $: if (value) {
+    console.log('evaluate:'+value)
+    evaluateCode(value);
+  }
 
   /**
    * @param {string} filename
