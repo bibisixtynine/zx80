@@ -14,13 +14,6 @@
   let windowScrollYMemo = undefined;
   onMount(() => {
     windowScrollYMemo = window.scrollY;
-    document.addEventListener("beforecopy", (e) => {
-      e.preventDefault();
-    });
-
-    document.addEventListener("beforecut", (e) => {
-      e.preventDefault();
-    });
   });
 
   let state = {
@@ -64,6 +57,7 @@
       // - launch app
       if (state.home) {
         runningApp = app;
+        runningApp.name = runningApp.name;
 
         // memo window scrollY
         windowScrollYMemo = window.scrollY;
