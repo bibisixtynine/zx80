@@ -1,11 +1,11 @@
 <!-------------------------------------------------------->
 <script>
   export let app = {
-    name: "Demo",
+    name: "first mount app",
     id: 0,
     svg: icons.tree,
     backgroundColor: "rgb(0, 0, 255)",
-    script: `// DEMO APP`
+    script: `// no code - first mount APP //`
   };
 
   import icons from "../libs/database-icons.js";
@@ -30,18 +30,12 @@
     } else {
       value = app.script
     }
+    console.log('Editor Mounted with ' + app.name)
     mounted = true;
   });
 
-  
-    const code = loadFromBrowserLocalStorage(app.name);
-    if (code) {
-      value = code;
-    } else {
-      value = app.script;
-    }  
 
-  $: evaluateCode(value);
+  $: if (value) evaluateCode(value);
 
   /**
    * @param {string} filename
