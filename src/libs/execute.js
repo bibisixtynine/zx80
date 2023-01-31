@@ -3,7 +3,7 @@ function execute(ui,code) {
     const iframe = document.createElement('iframe')
     iframe.width = '100%'
     iframe.height = '100%'
-    iframe.srcdoc = '<div id="ui" style="width:200px;height:100%"></div><canvas class="rainbow-pixel-canvas"></canvas><script type="module">' + code + '</script>'
+    iframe.srcdoc = '<script type="module">' + code + '</script>'
     ui.innerHTML = ''
     ui.appendChild(iframe)}
 
