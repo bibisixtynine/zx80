@@ -1,5 +1,5 @@
 function execute(ui,code) {
-    ui.style.border = 'solid blue 2px'
+    //ui.style.border = 'solid blue 2px'
     ui.style.margin = '0px'
     ui.style.padding = '0px'
     const iframe = document.createElement('iframe')
@@ -10,6 +10,7 @@ function execute(ui,code) {
     iframe.style.padding = '0px'
     iframe.style.margin = '0px'
     ui.innerHTML = ''
-    ui.appendChild(iframe)}
+    ui.appendChild(iframe)
+}
 
 export default execute

@@ -109,18 +109,22 @@
 <!-------------------------------------------------------->
 <style>
   #ui {
-    font-family: monospace;
-    color: green;
-    border: solid green 2px;
-    border-radius: 10px;
     padding: 0px;
     margin: 0px;
+
     position: fixed;
     top: 33px;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
     height: 30%;
     overflow: scroll;
     text-align: center;
+
+    /*border: solid green 2px;
+    border-radius: 10px;*/
+    width: calc(100% - 0px); /* 4px = border-width (2px... see above) x 2 */
+
+    font-family: monospace;
+    color: green;
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: scale(0.5)
   }
 </style>
