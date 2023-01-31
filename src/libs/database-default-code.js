@@ -34,9 +34,10 @@ export default (`
 
 //////////////////////////
 //
-// 🎨 PIXEL APP 1.0 
+// 🎨 PIXEL APP 1.3
 //
 
+// some printings
 print('<yellow>💫 !HELLO! 🚀')
 print('👀')
 print('my name is John!')
@@ -44,8 +45,10 @@ print('i am your 🤖')
 print('<blue>yes <white>i <red>am')
 print('so nice 🤩')
 
+// add a drawing canvas for the pixel app !
 print('<canvas style="border: solid 2px orange; border-radius: 15px; touch-action:none; width:80%" class="rainbow-pixel-canvas"></canvas>')
 
+// some more printings
 print('so happy it works !')
 print('<purple>Yeah Man !</red>')
 print('👀')
@@ -55,6 +58,20 @@ print('<blue>yes <white>i <red>am')
 print('so nice 🤩')
 print('so happy it works !')
 print('<purple>Yeah Man !</red>')
+
+/////////////////////////////////////////////////////////////
+//
+// the pixel app... could work as it is a static html file...
+//
+// <html>
+//   <head>
+//   </head>
+//   <body>
+//     <script type='module'> ... adding all the content of this file here ! </script>
+//   </body>
+// </html>
+//
+
 
 import interact from 'https://cdn.interactjs.io/v1.10.11/interactjs/index.js';
 
@@ -181,5 +198,8 @@ function print(param, uiId = 'ui') {
 }
   
 printf('<style> red{color:red} white{color:white} blue{color:blue} green{color:green} yellow{color:yellow} orange{color:orange} purple{color:purple}</style>')
+
+
+
 
 `)
