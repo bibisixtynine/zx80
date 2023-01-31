@@ -1,6 +1,14 @@
 <!-------------------------------------------------------->
 <script>
-  export let filename = "default";
+  export let app = {
+    name: "Demo",
+    id: 0,
+    svg: icons.tree,
+    backgroundColor: "rgb(0, 0, 255)",
+    script: `// DEMO APP`
+  };
+
+  import icons from "../libs/database-icons.js";
 
   import CodeMirror from "svelte-codemirror-editor";
   import { javascript } from "@codemirror/lang-javascript";
@@ -8,17 +16,16 @@
 
   import { onMount } from "svelte";
 
-  import const_value from "./database-default-code.js";
-
   import execute from "./execute.js";
 
-  let value = const_value;
+  let value = '// ## DEFAULT INITIAL VALUE ##';
+
   const default_value = "//" + value;
 
   let mounted = false;
 
   onMount(() => {
-    const code = loadFromBrowserLocalStorage();
+    const code = loadFromBrowserLocalStorage(app.name);
     if (code) {
       value = code;
     }
@@ -26,13 +33,13 @@
   });
 
   $: {
-    const code = loadFromBrowserLocalStorage(filename);
+    const code = loadFromBrowserLocalStorage(app.name);
     if (code) {
       value = code;
     } else {
-      value = default_value;
+      value = app.script;
     }
-    console.log("loaded in Editor: ", filename);
+    console.log("loaded in Editor: ", app.name);
   }
 
   $: evaluateCode(value);
@@ -42,7 +49,7 @@
    */
   function loadFromBrowserLocalStorage(filename) {
     if (typeof localStorage !== "undefined") {
-      const code = localStorage.getItem("mysupercomputer-code-" + filename);
+      const code = localStorage.getItem("zx80-script-" + filename);
       return code;
     }
   }
@@ -52,35 +59,21 @@
    */
   function saveToBrowserLocalStorage(code) {
     if (typeof localStorage !== "undefined") {
-      localStorage.setItem("mysupercomputer-code-" + filename, code);
+      localStorage.setItem("zx80-script-" + app.name, code);
     }
   }
 
-  function resetUI() {
-    return;
-  }
-
-  function resetTimers() {
-    let maxId = setTimeout(function () {}, 0);
-    // @ts-ignore
-    for (var i = 0; i < maxId; i += 1) {
-      clearTimeout(i);
-    }
-  }
 
   const evaluateCode = (/** @type {string} */ code) => {
     if (!mounted) return;
 
-    resetUI();
-    resetTimers();
     saveToBrowserLocalStorage(code);
 
     try {
       const ui = document.getElementById("ui");
       execute(ui, code);
-      //Function(code)(window);
     } catch (err) {
-      document.getElementById("ui").style.border = "solid red 2px";
+      console.error('##BIBIL-ERROR##')
       console.error(err);
     }
   };

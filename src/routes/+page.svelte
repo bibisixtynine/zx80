@@ -6,6 +6,7 @@
   import icons from "../libs/database-icons.js";
   import apps_database from "../libs/database-apps.js";
 
+
   let apps = apps_database;
 
   let iconSize = "64px";
@@ -62,7 +63,7 @@
       // - display app-view
       // - launch app
       if (state.home) {
-        runningApp = app.name;
+        runningApp = app;
 
         // memo window scrollY
         windowScrollYMemo = window.scrollY;
@@ -82,7 +83,12 @@
     }
   }
 
-  $: console.log("running app: ", runningApp);
+  $: {
+    console.log("running app: ", runningApp.name);
+    /*apps.forEach((app) =>
+      console.log(app.name)
+    )*/
+  }
 </script>
 
 <!-------------------------------------------------------->
@@ -98,7 +104,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="app-view">
-  <Editor filename={runningApp} />
+  <Editor app={runningApp} />
 </div>
 
 <div id="home-view" display="block">
