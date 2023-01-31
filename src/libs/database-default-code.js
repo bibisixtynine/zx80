@@ -1,26 +1,26 @@
 export default (`
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/////////////////////////////////////////////////////////////
+//
+// 🤖 README FIRST
+//
+// 1) type some characters between these brackets : [     ]
+//    and the app should auto-start above in preview mode !
+//
+// 2) use chrome brower debug window for debugging (only on desktop 🥲)
+//    . Press option+command+i on chrome osx,
+//    . Use the 'console' tab to see the errors message while you
+//      are typing code,
+//    . Add 'debugger' instruction (without brackets) to add a breakpoint
+//      anywhere in your code in this page,
+//    . Each time you type a character... the app auto relaunch.
+//
+//  ✅ Done !
+//
 
 //////////////////////////
 //
 // 🎨 PIXEL APP 1.0 
 //
-
-clear()
 
 print('<yellow>💫 !HELLO! 🚀')
 print('👀')
@@ -111,7 +111,6 @@ function resizeCanvases() {
 resizeCanvases();
  
 // interact.js can also add DOM event listeners
-console.log(window)
 interact(window).on('resize', resizeCanvases);
 
 
@@ -119,45 +118,53 @@ interact(window).on('resize', resizeCanvases);
 //
 // 📚 libs
 //
-function clear(e = false) {
-  if (!e) e = document.getElementById('ui')
-  if (!e) {
+// NB: _ prefixed function are 'private' to 'libs'
+function getUI(uiId) {
+  const ui = document.getElementById(uiId)
+  if (!ui) {
     const div = document.createElement('div')
-    div.id = 'ui'
+    div.id = uiId
     document.body.appendChild(div)
+    _initUI(div)
   }
-  e = document.getElementById('ui')
-  e.innerHTML = ''
-  const es = e.style
-  es.fontFamily = 'monospace'
-  es.fontSize = '20px'
-  es.position = 'fixed'
-  es.top = '0px'
-  es.left = '0px'
-  es.backgroundColor = 'rgba(0,0,0,0.5)'
-  es.width = '100%'
-  es.height = '100%'
-  es.overflow = 'scroll'
-  es.color = 'green'
-  es.textAlign = 'center'
+  return document.getElementById(uiId)
+} 
 
-  es.borderRadius = '25px'
-  es.margin = '0px'
-  es.padding = '0px'
+function _initUI(ui) {
+  ui.innerHTML = ''
+  ui.style
+  ui.style.fontFamily = 'monospace'
+  ui.style.fontSize = '20px'
+  ui.style.position = 'fixed'
+  ui.style.top = '0px'
+  ui.style.left = '0px'
+  ui.style.backgroundColor = 'rgba(0,0,0,0.5)'
+  ui.style.width = '100%'
+  ui.style.height = '100%'
+  ui.style.overflow = 'scroll'
+  ui.style.color = 'green'
+  ui.style.textAlign = 'center'
+  ui.style.borderRadius = '25px'
+  ui.style.margin = '0px'
+  ui.style.padding = '0px'
+  return ui
+}
+
+function clear(uiId = 'ui') {
+  const ui = getUI(uiId)
+  ui.innerHTML = ''
 }
  
-function printf(param, e = false) {
-  if (!e) e = document.getElementById('ui')
-  e.innerHTML += param
+function printf(param, uiId = 'ui') {
+  const ui = getUI(uiId)
+  ui.innerHTML += param
 }
 
-function print(param, e = false) {
-  if (!e) e = document.getElementById('ui')
-  e.innerHTML += param + '<br>'
+function print(param, uiId = 'ui') {
+  const ui = getUI(uiId)
+  ui.innerHTML += param + '<br>'
 }
-      
-let style = '<style> red{color:red} white{color:white} blue{color:blue} green{color:green} yellow{color:yellow} orange{color:orange} purple{color:purple}</style>'
-printf(style)
-
+  
+printf('<style> red{color:red} white{color:white} blue{color:blue} green{color:green} yellow{color:yellow} orange{color:orange} purple{color:purple}</style>')
 
 `)
