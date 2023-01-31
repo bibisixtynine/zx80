@@ -34,7 +34,7 @@ export default (`
 
 //////////////////////////
 //
-// 🎨 PIXEL APP 1.3
+// 🎨 PIXEL APP 1.4
 //
 
 // some printings
@@ -67,10 +67,11 @@ print('<purple>Yeah Man !</red>')
 //   <head>
 //   </head>
 //   <body>
-//     <script type='module'> ... adding all the content of this file here ! </script>
+//     <script type='module'> ... adding all the content of this file here ! </scr ipt>
 //   </body>
 // </html>
-//
+// 
+// STRANGE BUG : NEVER PUT THE correct</sc ript> in the comment...
 
 
 import interact from 'https://cdn.interactjs.io/v1.10.11/interactjs/index.js';
