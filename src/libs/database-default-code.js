@@ -17,16 +17,20 @@ export default (`
 
 //////////////////////////
 //
-// PIXEL APP 1.0 🥇
+// 🎨 PIXEL APP 1.0 
 //
+
 clear()
+
 print('<yellow>💫 !HELLO! 🚀')
 print('👀')
-print('my name is John !')
+print('my name is John!')
 print('i am your 🤖')
 print('<blue>yes <white>i <red>am')
 print('so nice 🤩')
-print('<canvas class="rainbow-pixel-canvas"></canvas>')
+
+print('<canvas style="border: solid 2px orange; border-radius: 15px; touch-action:none; width:80%" class="rainbow-pixel-canvas"></canvas>')
+
 print('so happy it works !')
 print('<purple>Yeah Man !</red>')
 print('👀')
@@ -37,100 +41,78 @@ print('so nice 🤩')
 print('so happy it works !')
 print('<purple>Yeah Man !</red>')
 
+import interact from 'https://cdn.interactjs.io/v1.10.11/interactjs/index.js';
 
-//
-// 🤓 DEFAULT EXAMPLE
+var pixelSize = 16;
 
-console.log('hello');
-        import interact from 'https://cdn.interactjs.io/v1.10.11/interactjs/index.js';
-        console.log(interact);
-        var pixelSize = 16;
-        interact('.rainbow-pixel-canvas')
-          .draggable({
-            max: Infinity,
-            maxPerElement: Infinity,
-            origin: 'self',
-            modifiers: [
-              interact.modifiers.snap({
-                // snap to the corners of a grid
-                targets: [
-                  interact.snappers.grid({ x: pixelSize, y: pixelSize }),
-                ],
-              }),
-            ],
-            listeners: {
-              // draw colored squares on move
-              move: function (event) {
-                var context = event.target.getContext('2d');
-                // calculate the angle of the drag direction
-                var dragAngle =
-                  (180 * Math.atan2(event.dx, event.dy)) / Math.PI;
+interact('.rainbow-pixel-canvas')
+  .draggable({
+    autoScroll: false,
+    max: Infinity,
+    maxPerElement: Infinity,
+    origin: 'self',
+    modifiers: [
+      interact.modifiers.snap({
+      // snap to the corners of a grid
+        targets: [
+          interact.snappers.grid({ x: pixelSize, y: pixelSize }),
+        ],
+      }),
+    ],
+    listeners: {
+      // draw colored squares on move
+      move: function (event) {
+        var context = event.target.getContext('2d');
+        // calculate the angle of the drag direction
+        var dragAngle =
+          (180 * Math.atan2(event.dx, event.dy)) / Math.PI;
+        // set color based on drag angle and speed
+        context.fillStyle =
+          'hsl(' +
+          dragAngle +
+          ', 86%, ' +
+          (30 + Math.min(event.speed / 1000, 1) * 50) +
+          '%)';
+        // draw squares
+        context.fillRect(
+          event.pageX - pixelSize / 2,
+          event.pageY - pixelSize / 2,
+          pixelSize,
+          pixelSize
+        );
+      },
+    },
+  })
+  // clear the canvas on doubletap
+  .on('doubletap', function (event) {
+    var context = event.target.getContext('2d');
+    context.clearRect(
+      0,
+      0,
+      context.canvas.width,
+      context.canvas.height
+    );
+    resizeCanvases();
+  });
 
-                // set color based on drag angle and speed
-                context.fillStyle =
-                  'hsl(' +
-                  dragAngle +
-                  ', 86%, ' +
-                  (30 + Math.min(event.speed / 1000, 1) * 50) +
-                  '%)';
+function resizeCanvases() {
+  [].forEach.call(
+    document.querySelectorAll('.rainbow-pixel-canvas'),
+    function (canvas) {
+      delete canvas.width;
+      delete canvas.height;
+      var rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+    }
+  );
+}
 
-                // draw squares
-                context.fillRect(
-                  event.pageX - pixelSize / 2,
-                  event.pageY - pixelSize / 2,
-                  pixelSize,
-                  pixelSize
-                );
-              },
-            },
-          })
-          // clear the canvas on doubletap
-          .on('doubletap', function (event) {
-            var context = event.target.getContext('2d');
-
-            context.clearRect(
-              0,
-              0,
-              context.canvas.width,
-              context.canvas.height
-            );
-            resizeCanvases();
-          });
-
-        function resizeCanvases() {
-          [].forEach.call(
-            document.querySelectorAll('.rainbow-pixel-canvas'),
-            function (canvas) {
-              delete canvas.width;
-              delete canvas.height;
-
-              var rect = canvas.getBoundingClientRect();
-
-              canvas.width = rect.width;
-              canvas.height = rect.height;
-            }
-          );
-        }
-
-        resizeCanvases();
+resizeCanvases();
  
-        // interact.js can also add DOM event listeners
-        console.log(window)
-        interact(window).on('resize', resizeCanvases);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// interact.js can also add DOM event listeners
+console.log(window)
+interact(window).on('resize', resizeCanvases);
 
 
 /////////////////////////////
@@ -145,7 +127,6 @@ function clear(e = false) {
     document.body.appendChild(div)
   }
   e = document.getElementById('ui')
-  document.body.style.backgroundColor='blue'
   e.innerHTML = ''
   const es = e.style
   es.fontFamily = 'monospace'
@@ -153,15 +134,13 @@ function clear(e = false) {
   es.position = 'fixed'
   es.top = '0px'
   es.left = '0px'
-  //es.backgroundColor = 'rgba(0,0,0,0.5)'
-  es.backgroundColor = 'rgba(155,0,0,0.5)'
-
-  es.width = '80%'
-  es.height = '80%'
+  es.backgroundColor = 'rgba(0,0,0,0.5)'
+  es.width = '100%'
+  es.height = '100%'
   es.overflow = 'scroll'
   es.color = 'green'
   es.textAlign = 'center'
-  es.border = 'solid 10px orange'
+
   es.borderRadius = '25px'
   es.margin = '0px'
   es.padding = '0px'
@@ -179,7 +158,6 @@ function print(param, e = false) {
       
 let style = '<style> red{color:red} white{color:white} blue{color:blue} green{color:green} yellow{color:yellow} orange{color:orange} purple{color:purple}</style>'
 printf(style)
-
 
 
 `)
