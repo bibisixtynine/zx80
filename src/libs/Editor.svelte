@@ -17,10 +17,9 @@
   import { onMount } from "svelte";
 
   import execute from "./execute.js";
-debugger
-  let value = '// ## DEFAULT INITIAL VALUE ##';
 
-  const default_value = "//" + value;
+
+  let value = undefined
 
   let mounted = false;
 
@@ -28,6 +27,8 @@ debugger
     const code = loadFromBrowserLocalStorage(app.name);
     if (code) {
       value = code;
+    } else {
+      value = app.script
     }
     mounted = true;
   });
@@ -38,9 +39,7 @@ debugger
       value = code;
     } else {
       value = app.script;
-    }
-    //console.log("loaded in Editor: ", app.name);
-  
+    }  
 
   $: evaluateCode(value);
 
