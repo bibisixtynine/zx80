@@ -18,25 +18,30 @@
 
   import execute from "./execute.js";
 
-  let script
+  let script;
 
   let mounted = false;
   onMount(() => {
     mounted = true;
   });
 
-  $: evaluateCode(script)
+  $: if (mounted) evaluateCode(script);
 
   $: {
-    console.log('== NEW APP EDIT ================================' + app.name)
-    const code = loadFromBrowserLocalStorage(app.name)
-    if (code) {
-      console.log('  ==> ALREADY STORED CODE USED ================')
-      script = code;
-      console.log('STORAGE PRESENT : use stored content')
-    } else {
-      console.log('  ==> NO STORED CODE, USE NEW ================')
-      script = app.script
+    if (mounted) {
+      console.log(
+        "== NEW APP EDIT ================================" + app.name
+      );
+      const code = loadFromBrowserLocalStorage(app.name);
+      if (code) {
+        console.log("  ==> ALREADY STORED CODE USED ================");
+        script = code;
+        console.log("STORAGE PRESENT : use stored content");
+      } else {
+        console.log("  ==> NO STORED CODE, USE NEW ================");
+        script = app.script;
+        saveToBrowserLocalStorage(app.script);
+      }
     }
   }
 
@@ -58,12 +63,18 @@
   function saveToBrowserLocalStorage(code) {
     if (typeof localStorage !== "undefined") {
       localStorage.setItem("zx80-script-" + app.name, code);
+      console.log("   saved ? ====> YES");
+    } else {
+      console.log("   saved ? ====> NO");
     }
   }
 
   const evaluateCode = (/** @type {string} */ code) => {
+    console.log(" evaluateCode... but mounted ?");
     if (!mounted) return;
+    console.log(" evaluateCode... YES mounted ?");
 
+    console.log(" evaluateCode... code SAVED ???");
     saveToBrowserLocalStorage(code);
 
     try {
