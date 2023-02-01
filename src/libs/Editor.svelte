@@ -18,8 +18,7 @@
 
   import execute from "./execute.js";
 
-  let value = undefined
-  console.log("value = " + app.script);
+  let value = '//'
 
   let mounted = false;
   onMount(() => {
@@ -27,10 +26,8 @@
   });
 
   $: {
-      
-      console.log("## EVALUATE" + app.script);
-      //evaluateCode(value);
-    
+      console.log('EVALUATE ' + app.name)
+      value = app.script
   }
 
   /**
