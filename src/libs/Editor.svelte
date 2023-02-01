@@ -27,7 +27,7 @@
 
   $: {
     if (mounted) {
-      console.log("*=> $APP.NAME => save" + app.name);
+      console.log("*=> $APP.NAME =>" + app.name);
       updateAppScriptIfAlreadyStored()
     }
   }
@@ -43,8 +43,12 @@
   function updateAppScriptIfAlreadyStored() {
     if (typeof localStorage !== "undefined") {
       const code = localStorage.getItem("zx80-script-" + app.name)
-      if (code) app.script = code
-      else {
+      console.log(' -> ' + app.name + ' already stored ?')
+      if (code) {
+        console.log(' -> yes => app.script = stored code')
+        app.script = code
+      } else {
+        console.log(' -> no => store app.script')
         localStorage.setItem("zx80-script-" + app.name, app.script);
       }
     } else {
@@ -58,12 +62,12 @@
    * @param {string} code
    */
   function saveCode(code) {
-    app.script = code
     if (typeof localStorage !== "undefined") {
+      app.script = code
       localStorage.setItem("zx80-script-" + app.name, code);
-      console.log("   saved ? ====> YES");
+      console.log("   saveCode => app.script saved");
     } else {
-      console.log("   saved ? ====> NO");
+      console.log('#ERROR# localStorage undefined')
     }
   }
 
