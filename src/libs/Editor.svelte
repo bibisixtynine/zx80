@@ -18,7 +18,7 @@
 
   import execute from "./execute.js";
 
-  let value = app.script;
+  let value = undefined
   console.log("value = " + app.script);
 
   let mounted = false;
@@ -26,8 +26,10 @@
     mounted = true;
   });
 
+  $: value = app.script
+
   $: {
-    if (mounted) {
+    if (mounted && value) {
       console.log("## EVALUATE");
       evaluateCode(value);
     }
