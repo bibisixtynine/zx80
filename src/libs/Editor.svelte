@@ -46,9 +46,11 @@
       console.log(' -> ' + app.name + ' already stored ?')
       if (code) {
         console.log(' -> yes => app.script = stored code')
+        console.log(' -> code = ' + code)
         app.script = code
       } else {
         console.log(' -> no => store app.script')
+        console.log(' -> code = ' + app.script)
         localStorage.setItem("zx80-script-" + app.name, app.script);
       }
     } else {
