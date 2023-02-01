@@ -18,12 +18,13 @@
 
   import execute from "./execute.js";
 
-
+  debugger
   let value = undefined
 
   let mounted = false;
 
   onMount(() => {
+    debugger
     const code = loadFromBrowserLocalStorage(app.name);
     if (code) {
       value = code;
@@ -48,6 +49,7 @@
       }
 
   $: if (value) {
+    debugger
     console.log('evaluate:'+value)
     evaluateCode(value);
   }
