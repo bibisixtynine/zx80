@@ -18,7 +18,7 @@
 
   import execute from "./execute.js";
 
-  let value = '//'
+  let value = app.script
 
   let mounted = false;
   onMount(() => {
