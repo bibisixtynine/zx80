@@ -28,12 +28,12 @@
 
    $: { 
     console.log('NEW APP IN EDITOR :' + app.name);
-    /*const code = loadFromBrowserLocalStorage(app.name);
+    const code = loadFromBrowserLocalStorage(app.name);
     if (code) {
       value = code;
     } else {
       value = app.script
-    }*/
+    }
 
       }
 
