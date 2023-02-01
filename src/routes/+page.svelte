@@ -46,7 +46,7 @@
 
   onMount(() => {
     windowScrollYMemo = window.scrollY;
-    apps = update_apps()
+    apps = update_apps(apps)
   });
   //
   // init
