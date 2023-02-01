@@ -1,7 +1,8 @@
 <!-------------------------------------------------------->
 <script>
-  import Editor from "../libs/Editor.svelte";
   import { onMount } from "svelte";
+
+  import Editor from "../libs/Editor.svelte";
   import Icon from "../libs/Icon.svelte";
   import icons from "../libs/database-icons.js";
   import apps_database from "../libs/database-apps.js";
@@ -12,12 +13,12 @@
   // init
   //
   let apps = apps_database;
-  let selectedApp = undefined;
+  let selectedApp
+  let windowScrollYMemo
   let iconSize = "64px";
   let state = {
     home: true,
   };
-  let windowScrollYMemo
   onMount(() => {
     windowScrollYMemo = window.scrollY;
   });
@@ -53,7 +54,6 @@
       // - launch app
       if (state.home) {
         selectedApp = app;
-        selectedApp.name = selectedApp.name;
 
         // memo window scrollY
         windowScrollYMemo = window.scrollY;
