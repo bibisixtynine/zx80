@@ -29,28 +29,26 @@
 
   $: {
     if (mounted) {
-      console.log("*=> $APP.NAME =>" + app.name);
-      updateAppScriptIfAlreadyStored()
+      updateAppScriptIfAlreadyStored(app)
     }
   }
 
   $: {
     if (mounted) {
-      console.log('*=> $SCRIPT => evaluateCode')
       evaluateCode(script);
       saveCode(script)
     }
   }
 
-  function updateAppScriptIfAlreadyStored() {
+  function updateAppScriptIfAlreadyStored(_app) {
     if (typeof localStorage !== "undefined") {
-      const code = localStorage.getItem("zx80-script-" + app.name)
+      const code = localStorage.getItem("zx80-script-" + _app.name)
       if (code) {
-        app.script = code
-        script = app.script
+        _app.script = code
+        script = _app.script
       } else {
-        localStorage.setItem("zx80-script-" + app.name, app.script);
-        script = app.script
+        localStorage.setItem("zx80-script-" + _app.name, _app.script);
+        script = _app.script
       }
     } else {
       console.log('#ERROR# localStorage undefined')
