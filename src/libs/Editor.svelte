@@ -18,7 +18,7 @@
 
   import execute from "./execute.js";
 
-  let script;
+  let script = '//hello world//';
 
   let mounted = false;
   onMount(() => {
@@ -48,6 +48,7 @@
         console.log(' -> yes => app.script = stored code')
         console.log(' -> code = ' + code)
         app.script = code
+        script = app.script
       } else {
         console.log(' -> no => store app.script')
         console.log(' -> code = ' + app.script)
