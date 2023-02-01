@@ -18,21 +18,21 @@
 
   import execute from "./execute.js";
 
+  let script
 
   let mounted = false;
   onMount(() => {
     mounted = true;
   });
 
+  $: evaluateCode(script)
 
   $: {
     const code = loadFromBrowserLocalStorage(app.name)
     if (code) {
-      app.script = code;
+      script = code;
       console.log('STORAGE PRESENT : use stored content')
     }
-    console.log('EVALUATE ' + app.name)
-    evaluateCode(app.script)
   }
 
   /**
@@ -78,7 +78,7 @@
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
 
-<CodeMirror bind:value={app.script} lang={javascript()} theme={oneDark} />
+<CodeMirror bind:value={script} lang={javascript()} theme={oneDark} />
 
 <div id="ui">...loading...</div>
 
