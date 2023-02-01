@@ -32,6 +32,8 @@
     if (code) {
       script = code;
       console.log('STORAGE PRESENT : use stored content')
+    } else {
+      evaluateCode(app.script)
     }
   }
 
