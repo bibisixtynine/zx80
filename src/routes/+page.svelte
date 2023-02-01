@@ -47,7 +47,6 @@
 
   onMount(() => {
     windowScrollYMemo = window.scrollY;
-    debugger
     apps = update_apps(apps)
   });
   //
