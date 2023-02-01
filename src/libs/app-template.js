@@ -32,8 +32,7 @@ export default  {
     //
     
     // some printings
-    print('<center><h1><orange>the <yellow>Template App<orange> 1.0</h1>')
-    
+    print('<center><h1><orange>Hello<yellow> World!</h1>')
     print('')
     print('👀')
     
