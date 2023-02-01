@@ -19,14 +19,34 @@
   // init
   //
   let apps = apps_database;
+
+  const apps_stringified = JSON.stringify(apps)
+  apps = JSON.parse(apps_stringified)
+
+
   let selectedApp
   let windowScrollYMemo
   let iconSize = "64px";
   let state = {
     home: true,
   };
+
+  function update_apps(_apps) {
+    if (typeof localStorage !== "undefined") {
+      const apps_database = localStorage.getItem("zx80-apps-database")
+      if (apps_database) {
+        return JSON.parse(apps_database)
+      } else {
+        localStorage.setItem("zx80-apps-database", JSON.stringify(_apps));
+      }
+    } else {
+      console.log('#ERROR# localStorage undefined')
+    }
+  }
+
   onMount(() => {
     windowScrollYMemo = window.scrollY;
+    apps = update_apps()
   });
   //
   // init
@@ -104,6 +124,8 @@
 
       apps.push(clone);
       apps = apps; // force update home-view
+
+      localStorage.setItem("zx80-apps-database", JSON.stringify(apps));
     }
   }
   //
