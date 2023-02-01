@@ -20,7 +20,7 @@
     home: true,
   };
 
-  let runningApp = "no app running !";
+  let runningApp = undefined;
 
   function handleHomeClick(event) {
     // hide app-view
@@ -98,7 +98,9 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="app-view">
+  {#if runningApp}
   <Editor app={runningApp} />
+  {/if}
 </div>
 
 <div id="home-view" display="block">
