@@ -18,16 +18,12 @@
 
   import execute from "./execute.js";
 
-  let value = app.script
 
   let mounted = false;
   onMount(() => {
     mounted = true;
   });
 
-  $: {
-    app.script = value
-  }
 
   $: {
       console.log('EVALUATE ' + app.name)
@@ -75,7 +71,7 @@
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
 
-<CodeMirror bind:value lang={javascript()} theme={oneDark} />
+<CodeMirror bind:this={app.script} lang={javascript()} theme={oneDark} />
 
 <div id="ui">...loading...</div>
 
