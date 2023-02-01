@@ -5,7 +5,7 @@
     id: 0,
     svg: icons.tree,
     backgroundColor: "rgb(0, 0, 255)",
-    script: `// no code - first mount APP //`
+    script: `// no code - first mount APP //`,
   };
 
   import icons from "../libs/database-icons.js";
@@ -18,28 +18,18 @@
 
   import execute from "./execute.js";
 
-  let value = app.script
+  let value = app.script;
+
+  $: value = app.script;
 
   let mounted = false;
-
+ 
   onMount(() => {
     mounted = true;
   });
 
-   $: { 
-    console.log('NEW APP IN EDITOR :' + app.name);
-    const code = loadFromBrowserLocalStorage(app.name);
-    if (code) {
-      value = code;
-    } else {
-      value = app.script
-    }
-
-      }
-
   $: if (value) {
-    debugger
-    console.log('evaluate:'+value)
+    console.log("evaluate:" + value);
     evaluateCode(value);
   }
 
@@ -62,7 +52,6 @@
     }
   }
 
-
   const evaluateCode = (/** @type {string} */ code) => {
     if (!mounted) return;
 
@@ -72,7 +61,7 @@
       const ui = document.getElementById("ui");
       execute(ui, code);
     } catch (err) {
-      console.error('##BIBIL-ERROR##')
+      console.error("##BIBIL-ERROR##");
       console.error(err);
     }
   };
@@ -80,7 +69,6 @@
 
 <!-------------------------------------------------------->
 <!-- Editor.svelte --------------------------------------->
-
 
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
@@ -92,7 +80,6 @@
 
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
-
 
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
@@ -117,6 +104,6 @@
     font-family: monospace;
     color: green;
     background-color: rgba(0, 0, 0, 0.2);
-    transform: scale(0.7)
+    transform: scale(0.7);
   }
 </style>
