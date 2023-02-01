@@ -27,6 +27,7 @@
 
   $: {
       console.log('EVALUATE ' + app.name)
+      evaluateCode(app.script)
   }
 
   /**
