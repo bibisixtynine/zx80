@@ -22,6 +22,8 @@
 
   let runningApp = undefined;
 
+  $: if (runningApp) console.log(runningApp.name + ' has been updated !')
+
   function handleHomeClick(event) {
     // hide app-view
     let program_1_container = document.getElementById("app-view");
@@ -94,7 +96,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="app-view">
   {#if runningApp}
-  <Editor app={runningApp} />
+  <Editor bind:app={runningApp} />
   {/if}
 </div>
 

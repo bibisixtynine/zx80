@@ -26,8 +26,13 @@
 
 
   $: {
-      console.log('EVALUATE ' + app.name)
-      evaluateCode(app.script)
+    const code = loadFromBrowserLocalStorage(app.name)
+    if (code) {
+      app.script = code;
+      console.log('STORAGE PRESENT : use stored content')
+    }
+    console.log('EVALUATE ' + app.name)
+    evaluateCode(app.script)
   }
 
   /**
@@ -37,6 +42,8 @@
     if (typeof localStorage !== "undefined") {
       const code = localStorage.getItem("zx80-script-" + filename);
       return code;
+    } else {
+      return false;
     }
   }
 
