@@ -10,6 +10,7 @@
   import Icon from "../libs/Icon.svelte";
   import icons from "../libs/database-icons.js";
   import apps_database from "../libs/database-apps.js";
+  import app_template from "../libs/app-template.js"
 
   import CONST from '../libs/CONST.js'
 
@@ -89,14 +90,19 @@
   //
   // create a new app and add to home-view
   //
+  function rnd() {
+    const date = Date.now().toString().substring(2)
+    const result = date.substring(0,date.length-3)
+
+    return result
+  }
+
   function newApp() {
     if (document) {
-      apps.push({
-        name: "Boy",
-        id: 1,
-        svg: icons.boy,
-        backgroundColor: "rgb(39, 50, 204)",
-      });
+      const clone = Object.assign({}, app_template);
+      clone.name = rnd()
+
+      apps.push(clone);
       apps = apps; // force update home-view
     }
   }
