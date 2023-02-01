@@ -27,7 +27,6 @@
 
   $: {
       console.log('EVALUATE ' + app.name)
-      value = app.script
   }
 
   /**
