@@ -32,9 +32,7 @@ export default  {
     //
     
     // some printings
-    print('<center><h1><orange>Hello<yellow> World!</h1>')
-    print('')
-    print('👀')
+    print('👀<center><h1><orange>Hello<yellow> World!</h1>')
     
     
     /////////////////////////////
