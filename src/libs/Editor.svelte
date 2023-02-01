@@ -20,19 +20,8 @@
 
   let value = app.script;
 
-  $: value = app.script;
-
-  let mounted = false;
- 
-  onMount(() => {
-    mounted = true;
-  });
-
-  $: if (value) {
-    console.log("evaluate:" + value);
-    evaluateCode(value);
-  }
-
+  $: evaluateCode(value);
+  
   /**
    * @param {string} filename
    */
