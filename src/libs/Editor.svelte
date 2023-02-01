@@ -72,7 +72,7 @@
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
 
-<CodeMirror bind:app={app} lang={javascript()} theme={oneDark} />
+<CodeMirror bind:value={app.script} lang={javascript()} theme={oneDark} />
 
 <div id="ui">...loading...</div>
 
