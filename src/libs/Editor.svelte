@@ -28,12 +28,15 @@
   $: evaluateCode(script)
 
   $: {
+    console.log('== NEW APP EDIT ================================' + app.name)
     const code = loadFromBrowserLocalStorage(app.name)
     if (code) {
+      console.log('  ==> ALREADY STORED CODE USED ================')
       script = code;
       console.log('STORAGE PRESENT : use stored content')
     } else {
-      evaluateCode(app.script)
+      console.log('  ==> NO STORED CODE, USE NEW ================')
+      script = app.script
     }
   }
 
