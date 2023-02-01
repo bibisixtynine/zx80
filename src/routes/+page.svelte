@@ -7,23 +7,30 @@
   import apps_database from "../libs/database-apps.js";
 
 
+  /////////////////////////////////////////////////////
+  //
+  // init
+  //
   let apps = apps_database;
-
+  let selectedApp = undefined;
   let iconSize = "64px";
-
-  let windowScrollYMemo = undefined;
-  onMount(() => {
-    windowScrollYMemo = window.scrollY;
-  });
-
   let state = {
     home: true,
   };
+  let windowScrollYMemo
+  onMount(() => {
+    windowScrollYMemo = window.scrollY;
+  });
+  //
+  // init
+  //
+  /////////////////////////////////////////////////////
 
-  let runningApp = undefined;
 
-  $: if (runningApp) console.log(runningApp.name + ' has been updated !')
-
+  /////////////////////////////////////////////////////
+  //
+  // user interaction handling
+  //
   function handleHomeClick(event) {
     // hide app-view
     let program_1_container = document.getElementById("app-view");
@@ -37,20 +44,7 @@
     if (windowScrollYMemo && !state.home) window.scroll(0, windowScrollYMemo);
     state.home = true;
   }
-
-  // create a new app and add to home-view
-  function newApp() {
-    if (document) {
-      apps.push({
-        name: "Boy",
-        id: 1,
-        svg: icons.boy,
-        backgroundColor: "rgb(39, 50, 204)",
-      });
-      apps = apps; // force update home-view
-    }
-  }
-
+//
   function handleAppClick(app) {
     if (document) {
       // if current view is home-view :
@@ -58,8 +52,8 @@
       // - display app-view
       // - launch app
       if (state.home) {
-        runningApp = app;
-        runningApp.name = runningApp.name;
+        selectedApp = app;
+        selectedApp.name = selectedApp.name;
 
         // memo window scrollY
         windowScrollYMemo = window.scrollY;
@@ -72,19 +66,39 @@
         // display app-view
         let app_view = document.getElementById("app-view");
         app_view.style.display = "block";
-
-        // launch selected app
-        //if (app.script) eval(app.script);
       }
     }
-  }
+  }  
+  //
+  // user interaction handling
+  //
+  /////////////////////////////////////////////////////
 
+
+  /////////////////////////////////////////////////////
+  //
+  // create a new app and add to home-view
+  //
+  function newApp() {
+    if (document) {
+      apps.push({
+        name: "Boy",
+        id: 1,
+        svg: icons.boy,
+        backgroundColor: "rgb(39, 50, 204)",
+      });
+      apps = apps; // force update home-view
+    }
+  }
+  //
+  // create a new app and add to home-view
+  //
+  /////////////////////////////////////////////////////
 
 </script>
 
 <!-------------------------------------------------------->
 <!-- page.svelte ----------------------------------------->
-
 
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
@@ -95,8 +109,8 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="app-view">
-  {#if runningApp}
-  <Editor app={runningApp} />
+  {#if selectedApp}
+    <Editor app={selectedApp} />
   {/if}
 </div>
 
@@ -118,7 +132,6 @@
 
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
-
 
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
