@@ -35,7 +35,7 @@
   $: {
     if (mounted) {
       console.log('*=> $SCRIPT => evaluateCode')
-      evaluateCode(script);
+      //evaluateCode(script);
       saveCode(script)
     }
   }
@@ -51,7 +51,9 @@
       } else {
         console.log(' -> no => store app.script')
         console.log(' -> code = ' + app.script)
+        debugger
         localStorage.setItem("zx80-script-" + app.name, app.script);
+        script = app.script
       }
     } else {
       console.log('#ERROR# localStorage undefined')
