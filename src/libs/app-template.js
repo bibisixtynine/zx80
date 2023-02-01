@@ -1,6 +1,5 @@
 import icons from "./database-icons.js";
 
-
 export default  {
     name: "template",
     id: 0,
@@ -8,6 +7,22 @@ export default  {
     backgroundColor: "rgb(0, 50, 0)",
     script: `
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 //////////////////////////
 //
 // 🤩 TEMPLATE APP 1.1
