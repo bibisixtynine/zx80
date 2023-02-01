@@ -18,33 +18,22 @@
 
   import execute from "./execute.js";
 
-  debugger
-  let value = undefined
+  let value = app.script
 
   let mounted = false;
 
   onMount(() => {
-    debugger
-    const code = loadFromBrowserLocalStorage(app.name);
-    if (code) {
-      value = code;
-    } else {
-      value = app.script
-    }
-    console.log('Editor Mounted with ' + app.name)
-    
     mounted = true;
   });
 
-  $:  { 
-    debugger
+   $: { 
     console.log('NEW APP IN EDITOR :' + app.name);
-    const code = loadFromBrowserLocalStorage(app.name);
+    /*const code = loadFromBrowserLocalStorage(app.name);
     if (code) {
       value = code;
     } else {
       value = app.script
-    }
+    }*/
 
       }
 
