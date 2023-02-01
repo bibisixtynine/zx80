@@ -38,6 +38,7 @@
         return JSON.parse(apps_database)
       } else {
         localStorage.setItem("zx80-apps-database", JSON.stringify(_apps));
+        return _apps
       }
     } else {
       console.log('#ERROR# localStorage undefined')
@@ -46,6 +47,7 @@
 
   onMount(() => {
     windowScrollYMemo = window.scrollY;
+    debugger
     apps = update_apps(apps)
   });
   //
