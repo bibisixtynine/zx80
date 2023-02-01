@@ -7,32 +7,37 @@ export default  {
     svg: icons.earth,
     backgroundColor: "rgb(0, 50, 0)",
     script: `
-/////////////////////////////////////////////////////////////
-//
-// 🤖 README FIRST
-//
-// 1) type some characters between these brackets : [     ]
-//    and the app should auto-start above in preview mode !
-//
-// 2) use chrome brower debug window for debugging (only on desktop 🥲)
-//    . Press option+command+i on chrome osx,
-//    . Use the 'console' tab to see the errors message while you
-//      are typing code,
-//    . Add 'debugger' instruction (without brackets) to add a breakpoint
-//      anywhere in your code in this page,
-//    . Each time you type a character... the app auto relaunch.
-//
-//  ✅ Done !
-//
-
 
 //////////////////////////
 //
-// 🤩 TEMPLATE APP 1.0
+// 🤩 TEMPLATE APP 1.1
 //
 
-// some printings
 print('👀<center><h1><orange>Hello<yellow> World!</h1>')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /////////////////////////////
@@ -54,7 +59,6 @@ function getUI(uiId) {
 function _initUI(ui) {
   ui.innerHTML = ''
   ui.innerHTML = '<style>center{position:fixed; left:50%; top:50%; transform:translate(-50%,-50%)} red{color:red} white{color:white} blue{color:blue} green{color:green} yellow{color:yellow} orange{color:orange} purple{color:purple}</style>'
-
   ui.style.fontFamily = 'monospace'
   ui.style.fontSize = '20px'
   ui.style.position = 'fixed'
@@ -88,4 +92,7 @@ function print(param, uiId = 'ui') {
   ui.innerHTML += param + '<br>'
 }
     
+
+
+
 `}

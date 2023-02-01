@@ -11,10 +11,7 @@ export default  {
 //
 // 🤖 README FIRST
 //
-// 1) type some characters between these brackets : [     ]
-//    and the app should auto-start above in preview mode !
-//
-// 2) use chrome brower debug window for debugging (only on desktop 🥲)
+//  Use chrome brower debug window for debugging (only on desktop 🥲)
 //    . Press option+command+i on chrome osx,
 //    . Use the 'console' tab to see the errors message while you
 //      are typing code,
@@ -154,8 +151,7 @@ function getUI(uiId) {
 
 function _initUI(ui) {
   ui.innerHTML = ''
-  ui.innerHTML = '<style>red{color:red} white{color:white} blue{color:blue} green{color:green} yellow{color:yellow} orange{color:orange} purple{color:purple}</style>'
-
+  ui.innerHTML = '<style>center{position:fixed; left:50%; top:50%; transform:translate(-50%,-50%)} red{color:red} white{color:white} blue{color:blue} green{color:green} yellow{color:yellow} orange{color:orange} purple{color:purple}</style>'
   ui.style.fontFamily = 'monospace'
   ui.style.fontSize = '20px'
   ui.style.position = 'fixed'
@@ -176,9 +172,9 @@ function _initUI(ui) {
 function clear(uiId = 'ui') {
   const ui = getUI(uiId)
   ui.innerHTML = ''
-  ui.innerHTML = '<style>red{color:red} white{color:white} blue{color:blue} green{color:green} yellow{color:yellow} orange{color:orange} purple{color:purple}</style>'
+  ui.innerHTML = '<style>center{position:fixed; left:50%; top:50%; transform:translate(-50%,-50%)} red{color:red} white{color:white} blue{color:blue} green{color:green} yellow{color:yellow} orange{color:orange} purple{color:purple}</style>'
 }
- 
+  
 function printf(param, uiId = 'ui') {
   const ui = getUI(uiId)
   ui.innerHTML += param
@@ -188,4 +184,8 @@ function print(param, uiId = 'ui') {
   const ui = getUI(uiId)
   ui.innerHTML += param + '<br>'
 }
+    
+
+
+
 `}
