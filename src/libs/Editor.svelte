@@ -26,13 +26,11 @@
     mounted = true;
   });
 
-  $: value = app.script
-
   $: {
-    if (mounted && value) {
-      console.log("## EVALUATE");
-      evaluateCode(value);
-    }
+      
+      console.log("## EVALUATE" + app.script);
+      //evaluateCode(value);
+    
   }
 
   /**
