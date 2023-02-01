@@ -37,7 +37,9 @@
       if (apps_database) {
         return JSON.parse(apps_database)
       } else {
-        localStorage.setItem("zx80-apps-database", JSON.stringify(_apps));
+        const stringified_apps = JSON.stringify(_apps)
+        localStorage.setItem("zx80-apps-database", stringified_apps);
+        localStorage.setItem("zx80-apps-database-length", stringified_apps.length)
         return _apps
       }
     } else {
@@ -126,7 +128,9 @@
       apps.push(clone);
       apps = apps; // force update home-view
 
-      localStorage.setItem("zx80-apps-database", JSON.stringify(apps));
+      const stringified_apps = JSON.stringify(apps)
+      localStorage.setItem("zx80-apps-database", stringified_apps);
+      localStorage.setItem("zx80-apps-database-length", stringified_apps.length)
     }
   }
   //
