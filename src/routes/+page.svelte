@@ -96,7 +96,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="app-view">
   {#if runningApp}
-  <Editor bind:app={runningApp} />
+  <Editor app={runningApp} />
   {/if}
 </div>
 

@@ -35,7 +35,7 @@
   $: {
     if (mounted) {
       console.log('*=> $SCRIPT => evaluateCode')
-      //evaluateCode(script);
+      evaluateCode(script);
       saveCode(script)
     }
   }
