@@ -1,16 +1,30 @@
 import icons from "./database-icons.js";
 
-
 export default  {
-    name: "Cube",
+    name: "Cube 2",
     id: 0,
     svg: icons.tree,
     backgroundColor: "rgb(0, 0, 255)",
     script: `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /////////////////////////////////////////////////////////////
 //
 // 🤖 README FIRST
-//
 //
 //  Use chrome brower debug window for debugging (only on desktop 🥲)
 //    . Press option+command+i on chrome osx,

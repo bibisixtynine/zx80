@@ -31,14 +31,12 @@
 
   $: {
     if (mounted) {
-      console.log("*=> $APP.NAME =>" + app.name);
       updateAppScriptIfAlreadyStored()
     }
   }
 
   $: {
     if (mounted) {
-      console.log('*=> $SCRIPT => evaluateCode')
       evaluateCode(script);
       saveCode(script)
     }

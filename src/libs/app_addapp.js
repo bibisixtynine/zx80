@@ -7,7 +7,7 @@ export default  {
     svg: icons.plus,
     backgroundColor: "rgb(255, 0, 0)",
     script: `
-      // addapp
+      // this is a system app, not editable. This one will execute (ADD_APP)
     `,
     system: CONST.ADD_APP
 }
