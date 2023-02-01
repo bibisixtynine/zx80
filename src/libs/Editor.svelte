@@ -25,42 +25,40 @@
     mounted = true;
   });
 
-  $: if (mounted) evaluateCode(script);
+  $: {
+    if (mounted) {
+      console.log("*=> $APP.NAME => save" + app.name);
+      updateAppScriptIfAlreadyStored()
+    }
+  }
 
   $: {
     if (mounted) {
-      console.log(
-        "== NEW APP EDIT ================================" + app.name
-      );
-      const code = loadFromBrowserLocalStorage(app.name);
-      if (code) {
-        console.log("  ==> ALREADY STORED CODE USED ================");
-        script = code;
-        console.log("STORAGE PRESENT : use stored content");
-      } else {
-        console.log("  ==> NO STORED CODE, USE NEW ================");
-        script = app.script;
-        saveToBrowserLocalStorage(app.script);
-      }
+      console.log('*=> $SCRIPT => evaluateCode')
+      evaluateCode(script);
+      saveCode(script)
     }
   }
 
-  /**
-   * @param {string} filename
-   */
-  function loadFromBrowserLocalStorage(filename) {
+  function updateAppScriptIfAlreadyStored() {
     if (typeof localStorage !== "undefined") {
-      const code = localStorage.getItem("zx80-script-" + filename);
-      return code;
+      const code = localStorage.getItem("zx80-script-" + app.name)
+      if (code) app.script = code
+      else {
+        localStorage.setItem("zx80-script-" + app.name, app.script);
+      }
     } else {
-      return false;
+      console.log('#ERROR# localStorage undefined')
     }
   }
+
+
 
   /**
    * @param {string} code
    */
-  function saveToBrowserLocalStorage(code) {
+  function saveCode(code) {
+    app.script = code
     if (typeof localStorage !== "undefined") {
       localStorage.setItem("zx80-script-" + app.name, code);
       console.log("   saved ? ====> YES");
@@ -70,13 +68,7 @@
   }
 
   const evaluateCode = (/** @type {string} */ code) => {
-    console.log(" evaluateCode... but mounted ?");
     if (!mounted) return;
-    console.log(" evaluateCode... YES mounted ?");
-
-    console.log(" evaluateCode... code SAVED ???");
-    saveToBrowserLocalStorage(code);
-
     try {
       const ui = document.getElementById("ui");
       execute(ui, code);
