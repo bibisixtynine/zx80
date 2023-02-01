@@ -19,9 +19,20 @@
   import execute from "./execute.js";
 
   let value = app.script;
+  console.log("value = " + app.script);
 
-  $: evaluateCode(value);
-  
+  let mounted = false;
+  onMount(() => {
+    mounted = true;
+  });
+
+  $: {
+    if (mounted) {
+      console.log("## EVALUATE");
+      evaluateCode(value);
+    }
+  }
+
   /**
    * @param {string} filename
    */
