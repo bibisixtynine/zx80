@@ -1,12 +1,6 @@
 <!-------------------------------------------------------->
 <script>
-  export let app = {
-    name: "first mount app",
-    id: 0,
-    svg: icons.tree,
-    backgroundColor: "rgb(0, 0, 255)",
-    script: `// no code - first mount APP //`,
-  };
+  export let app
 
   import icons from "../libs/database-icons.js";
 
@@ -18,6 +12,13 @@
 
   import execute from "./execute.js";
 
+  app = {
+    name: "first mount app",
+    id: 0,
+    svg: icons.tree,
+    backgroundColor: "rgb(0, 0, 255)",
+    script: `// no code - first mount APP //`,
+  };
 
   let mounted = false;
   onMount(() => {
