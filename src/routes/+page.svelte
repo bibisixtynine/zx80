@@ -77,12 +77,7 @@
     }
   }
 
-  $: {
-    console.log("running app: ", runningApp.name);
-    /*apps.forEach((app) =>
-      console.log(app.name)
-    )*/
-  }
+
 </script>
 
 <!-------------------------------------------------------->
