@@ -1,4 +1,8 @@
 <!-------------------------------------------------------->
+<!-- Editor.svelte --------------------------------------->
+<!-------------------------------------------------------->
+
+
 <script>
   export let app = {
     name: "first mount app",
@@ -43,16 +47,10 @@
   function updateAppScriptIfAlreadyStored() {
     if (typeof localStorage !== "undefined") {
       const code = localStorage.getItem("zx80-script-" + app.name)
-      console.log(' -> ' + app.name + ' already stored ?')
       if (code) {
-        console.log(' -> yes => app.script = stored code')
-        console.log(' -> code = ' + code)
         app.script = code
         script = app.script
       } else {
-        console.log(' -> no => store app.script')
-        console.log(' -> code = ' + app.script)
-        debugger
         localStorage.setItem("zx80-script-" + app.name, app.script);
         script = app.script
       }
@@ -62,7 +60,6 @@
   }
 
 
-
   /**
    * @param {string} code
    */
@@ -70,7 +67,6 @@
     if (typeof localStorage !== "undefined") {
       app.script = code
       localStorage.setItem("zx80-script-" + app.name, code);
-      console.log("   saveCode => app.script saved");
     } else {
       console.log('#ERROR# localStorage undefined')
     }
@@ -88,25 +84,21 @@
   };
 </script>
 
-<!-------------------------------------------------------->
-<!-- Editor.svelte --------------------------------------->
 
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
+
 
 <CodeMirror bind:value={script} lang={javascript()} theme={oneDark} />
-
 <div id="ui">...loading...</div>
 
-<!-------------------------------------------------------->
-<!-------------------------------------------------------->
 
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
 <!-------------------------------------------------------->
 
-<!-------------------------------------------------------->
+
 <style>
   #ui {
     padding: 0px;
