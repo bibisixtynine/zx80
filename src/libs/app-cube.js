@@ -1,7 +1,7 @@
 import icons from "./database-icons.js";
 
 export default  {
-    name: "Cube 2",
+    name: "Cube 3",
     id: 0,
     svg: icons.tree,
     backgroundColor: "rgb(0, 0, 255)",
@@ -39,9 +39,9 @@ export default  {
 
 //////////////////////////
 //
-// ⬜️ CUBE APP 1.0
+// ⬜️ CUBE APP 3.0
 //
-
+/*
 import "https://code.playcanvas.com/playcanvas-stable.min.js"
 
 clear()
@@ -137,7 +137,7 @@ function print(param, uiId = 'ui') {
   const ui = getUI(uiId)
   ui.innerHTML += param + '<br>'
 }
-    
+*/
 
 
 
