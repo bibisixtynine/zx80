@@ -153,6 +153,15 @@ interact(window).on('resize', resizeCanvases);
 // 📚 libs
 //
 // NB: _ prefixed function are 'private' to 'libs'
+function input(text,fct) {
+  const id=Date.now().toString()
+  printf(text+ '<input id="'+id+'"placeholder="Enter some text" name="name" />')
+  const e = document.getElementById(id)
+  e.addEventListener('change',(event)=>{
+    fct(event.target.value)
+  })
+}
+
 function getUI(uiId) {
   const ui = document.getElementById(uiId)
   if (!ui) {
@@ -190,17 +199,15 @@ function clear(uiId = 'ui') {
   ui.innerHTML = '<style>center{position:fixed; left:50%; top:50%; transform:translate(-50%,-50%)} red{color:red} white{color:white} blue{color:blue} green{color:green} yellow{color:yellow} orange{color:orange} purple{color:purple}</style>'
 }
   
-function printf(param, uiId = 'ui') {
+function printf(html, uiId = 'ui') {
   const ui = getUI(uiId)
-  ui.innerHTML += param
+  ui.insertAdjacentHTML('beforeend', html);
 }
 
-function print(param, uiId = 'ui') {
+function print(html, uiId = 'ui') {
   const ui = getUI(uiId)
-  ui.innerHTML += param + '<br>'
+  ui.insertAdjacentHTML('beforeend', html+"<br>");
 }
-    
-
 
 
 `}

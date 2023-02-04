@@ -49,7 +49,10 @@ print('<orange>the <yellow>Cube App<orange> 1.0')
 print('<canvas id="application"></canvas>')
 
 const canvas = document.getElementById('application');
-const app = new pc.Application(canvas);
+
+// Create the app and start the update loop
+const app = new pc.Application(canvas, {});
+app.start();
 
 // fill the available space at full resolution
 app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);
@@ -82,7 +85,6 @@ light.setEulerAngles(45, 0, 0);
 // rotate the box according to the delta time since the last frame
 app.on('update', dt => box.rotate(10 * dt, 20 * dt, 30 * dt));
 
-app.start();
 
 
 
@@ -91,6 +93,15 @@ app.start();
 // 📚 libs
 //
 // NB: _ prefixed function are 'private' to 'libs'
+function input(text,fct) {
+  const id=Date.now().toString()
+  printf(text+ '<input id="'+id+'"placeholder="Enter some text" name="name" />')
+  const e = document.getElementById(id)
+  e.addEventListener('change',(event)=>{
+    fct(event.target.value)
+  })
+}
+
 function getUI(uiId) {
   const ui = document.getElementById(uiId)
   if (!ui) {
@@ -128,14 +139,14 @@ function clear(uiId = 'ui') {
   ui.innerHTML = '<style>center{position:fixed; left:50%; top:50%; transform:translate(-50%,-50%)} red{color:red} white{color:white} blue{color:blue} green{color:green} yellow{color:yellow} orange{color:orange} purple{color:purple}</style>'
 }
   
-function printf(param, uiId = 'ui') {
+function printf(html, uiId = 'ui') {
   const ui = getUI(uiId)
-  ui.innerHTML += param
+  ui.insertAdjacentHTML('beforeend', html);
 }
 
-function print(param, uiId = 'ui') {
+function print(html, uiId = 'ui') {
   const ui = getUI(uiId)
-  ui.innerHTML += param + '<br>'
+  ui.insertAdjacentHTML('beforeend', html+"<br>");
 }
 */
 
